@@ -603,6 +603,7 @@ footer .foot-link{ color:var(--taupe); }
       <div class="hero-portrait">
         <div class="avatar-frame">
           <div class="avatar" id="avatar">
+            <img src="avatar.jpg" alt="李雪彤" />
             <div class="avatar-placeholder">
               <span class="ph-name">李</span>
               <span class="ph-sub">XUETONG LI</span>
@@ -1234,6 +1235,10 @@ document.querySelectorAll('.detail-tabs').forEach(tabList => {
 (function loadAvatar(){
   const candidates = ['avatar.png', 'avatar.jpg', 'avatar.jpeg'];
   const avatarBox  = document.getElementById('avatar');
+  if(avatarBox.querySelector('img')){
+    avatarBox.classList.add('loaded');
+    return;
+  }
   function tryLoad(index){
     if(index >= candidates.length) return;
     const testImg = new Image();

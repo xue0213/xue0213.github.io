@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CND · 项目介绍</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root{--cream:#fbf6e9;--paper:#fff;--ink:#20201e;--soft:#5e5a51;--muted:#918a7b;--line:#e5decd;--amber:#f9aa2a;--amber-bg:#fff0d2;--blue:#85c6dc;--blue-bg:#e7f4f8;--green:#75bd79;--green-bg:#e9f5e8;--purple:#56308a;--dark:#282622;--shadow:0 14px 36px rgba(45,37,24,.10);--max:1120px;font-family:Lato,"PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);line-height:1.7}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}main{max-width:var(--max);margin:auto;padding:34px 24px 86px}.return{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--soft);font-weight:800;font-size:.82rem}.hero{margin-top:28px;padding:58px 56px;background:var(--dark);color:#fff;border-radius:30px;box-shadow:0 24px 60px rgba(30,24,14,.25);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:390px;height:390px;border-radius:50%;right:-145px;top:-180px;background:rgba(249,170,42,.22)}.kicker,.eyebrow{color:var(--amber);font-size:.75rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{position:relative;z-index:1;font-size:clamp(2.55rem,5.6vw,4.65rem);line-height:1.04;letter-spacing:-1.5px;margin:14px 0 20px}.hero h1 span{display:block;color:var(--amber)}.hero p{position:relative;z-index:1;max-width:810px;margin:0;color:rgba(255,255,255,.8);font-size:1.08rem}.hero strong{color:var(--amber)}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}.hero-meta span{padding:6px 11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);border-radius:99px;font-size:.76rem;font-weight:800}.section{margin-top:96px}.title{font-size:clamp(1.9rem,4vw,2.65rem);line-height:1.14;margin:8px 0 12px}.intro{max-width:860px;color:var(--soft);margin:0}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:27px}.flow article,.card{background:#fff;border:1.5px solid var(--line);border-radius:19px;padding:21px;box-shadow:0 2px 9px rgba(45,37,24,.04)}.flow b{display:block;color:var(--amber);font-size:.72rem;letter-spacing:1px;margin-bottom:8px}.flow h3,.card h3{font-size:1.02rem;margin:0 0 7px}.flow p,.card p{font-size:.87rem;color:var(--soft);margin:0}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}.card.accent{background:var(--dark);color:#fff;border-color:var(--dark)}.card.accent p{color:rgba(255,255,255,.75)}.card ul{margin:10px 0 0;padding-left:19px;color:var(--soft);font-size:.88rem}.card li+li{margin-top:7px}.card.accent ul{color:rgba(255,255,255,.75)}.model-line{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}.model-line article{position:relative;padding:18px;border-radius:16px;background:#fff;border:1.5px solid var(--line)}.model-line article:not(:last-child):after{content:"→";position:absolute;right:-12px;top:42%;z-index:2;color:var(--amber);font-weight:900}.model-line b{display:block;font-size:1.08rem}.model-line span{color:var(--soft);font-size:.8rem}.paper-figure{margin:28px 0 0;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:16px 20px;box-shadow:0 3px 14px rgba(45,37,24,.05);cursor:zoom-in;transition:.25s}.paper-figure:hover{border-color:var(--amber);box-shadow:var(--shadow);transform:translateY(-2px)}.paper-figure img{width:100%;height:auto;border-radius:12px}.paper-figure figcaption{margin:12px 4px 2px;font-size:.88rem;font-weight:900}.paper-figure figcaption span{display:block;color:var(--muted);font-size:.75rem;font-weight:700;margin-top:2px}.method-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;margin-top:27px;align-items:stretch}.method-list{display:grid;gap:11px}.method-step{border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:16px;text-align:left;cursor:pointer;font:inherit}.method-step small{display:block;color:var(--amber);font-weight:900;letter-spacing:1px}.method-step b{font-size:.92rem}.method-step.active{background:var(--dark);color:#fff;border-color:var(--dark)}.method-detail{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:22px}.method-panel{display:none}.method-panel.active{display:block}.method-panel h3{font-size:1.23rem;margin:0 0 8px}.method-panel p{font-size:.9rem;color:var(--soft);margin:0}.method-panel ul{padding-left:19px;color:var(--soft);font-size:.87rem}.method-panel .formula{padding:10px 12px;background:var(--amber-bg);border-radius:10px;font:700 .78rem ui-monospace,Menlo,monospace}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:26px}.metric{background:#fff;border:1.5px solid var(--line);border-top:5px solid var(--amber);border-radius:17px;padding:16px}.metric:nth-child(2){border-top-color:var(--blue)}.metric:nth-child(3){border-top-color:var(--green)}.metric:nth-child(4){border-top-color:var(--purple)}.metric span{display:block;color:var(--muted);font-size:.71rem;font-weight:900}.metric strong{display:block;font-size:1.55rem;margin-top:4px}.metric small{color:var(--soft);font-size:.72rem}.results{margin-top:18px;overflow:auto;border:1.5px solid var(--line);border-radius:18px;background:#fff}.results table{width:100%;min-width:730px;border-collapse:collapse;font-size:.81rem}.results th,.results td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line)}.results th{background:var(--dark);color:#fff}.best{color:#d94730;font-weight:900}.data-layout{display:grid;grid-template-columns:1.25fr .75fr;gap:19px;align-items:center;margin-top:24px}.data-layout .paper-figure{margin:0}.data-copy{display:grid;gap:10px}.data-copy article{padding:14px 16px;border-radius:14px;background:#fff;border:1px solid var(--line)}.data-copy b{display:block;font-size:.88rem}.data-copy span{display:block;color:var(--soft);font-size:.78rem}.finding{margin-top:22px;border-left:5px solid var(--amber);background:var(--amber-bg);border-radius:12px;padding:14px 16px;color:var(--soft);font-size:.88rem}.conclusion{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:26px}.conclusion .card{padding:24px}.conclusion .card:first-child{border-left:5px solid var(--amber)}.footer{margin-top:54px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.78rem}dialog{border:0;border-radius:20px;padding:0;width:min(980px,94vw);background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.28)}dialog::backdrop{background:rgba(25,21,15,.72)}.dialog-head{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;border-bottom:1px solid var(--line);font-weight:900}.dialog-head button{border:0;border-radius:8px;background:var(--dark);color:#fff;padding:7px 10px}.dialog-body{padding:14px;max-height:82vh;overflow:auto}.dialog-body img{width:100%;height:auto}
+    @media(max-width:820px){.flow,.metrics,.model-line{grid-template-columns:1fr 1fr}.split,.method-grid,.data-layout,.conclusion{grid-template-columns:1fr}.model-line article:after{display:none}}
+    .hero h1{font-size:clamp(2.35rem,5vw,4.05rem)}
+    @media(max-width:520px){main{padding:22px 15px 58px}.hero{padding:36px 24px}.hero h1{font-size:2.48rem}.section{margin-top:72px}.flow,.metrics,.model-line{grid-template-columns:1fr}.paper-figure{padding:9px}}
+    .metric-help{display:inline-flex;align-items:center;gap:5px;border:0;background:transparent;color:inherit;font:inherit;font-weight:900;padding:3px 5px;border-radius:7px;cursor:pointer}.metric-help::after{content:"?";display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:.66rem}.metric-help:hover,.metric-help:focus-visible{background:rgba(255,255,255,.12);outline:none}.metric-popover{position:fixed;z-index:80;width:min(340px,calc(100vw - 24px));padding:16px 17px;background:var(--dark);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:15px;box-shadow:0 18px 45px rgba(25,20,12,.28);opacity:0;visibility:hidden;transform:translateY(-5px);transition:.18s}.metric-popover.open{opacity:1;visibility:visible;transform:translateY(0)}.metric-popover::before{content:"";position:absolute;top:-7px;left:var(--arrow-left,28px);width:13px;height:13px;background:var(--dark);transform:rotate(45deg);border-left:1px solid rgba(255,255,255,.16);border-top:1px solid rgba(255,255,255,.16)}.metric-popover h3{margin:0 0 5px;color:var(--amber);font-size:1rem}.metric-popover p{margin:0;color:rgba(255,255,255,.78);font-size:.8rem;line-height:1.6}.metric-formula{margin:10px 0 8px;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,.08);font:700 .72rem ui-monospace,Menlo,monospace;overflow-x:auto}.metric-popover small{display:block;color:rgba(255,255,255,.58);font-size:.7rem}.metric-close{position:absolute;right:10px;top:9px;border:0;background:transparent;color:rgba(255,255,255,.6);font-size:1rem;cursor:pointer}@media(max-width:520px){.metric-popover{left:12px!important;right:12px;bottom:14px;top:auto!important;width:auto}.metric-popover::before{display:none}}
+  </style>
+</head>
+<body>
+<main>
+  <a class="return" href="../../index.html#research">← 返回个人主页 · 科研</a>
+
+  <header class="hero">
+    <div class="kicker">Cost network dismantling · CND</div>
+    <h1>考虑攻击与转移成本的<span>网络瓦解策略</span></h1>
+    <p>传统网络瓦解关注“删除哪些节点能最快破坏连通性”。CND 进一步考虑<strong>节点攻击成本、相邻攻击之间的转移成本和可行转移约束</strong>，并用多视图图表示学习与强化学习生成顺序攻击策略。</p>
+    <div class="hero-meta"><span>Neurocomputing 670 (2026)</span><span>Epi_CND</span><span>Ins_CND</span><span>DQN + multi-view GNN</span></div>
+  </header>
+
+  <section class="section" id="background">
+    <div class="eyebrow">01 · Application background</div>
+    <h2 class="title">网络攻击是一连串行动，而不是一次静态排序</h2>
+    <p class="intro">社交群体、供应链、交通、通信和神经系统都可以表示为网络。攻击者希望以尽可能低的行动成本快速削弱系统连接；防御者则可以通过研究最优攻击路径，识别关键节点与脆弱转移关系。</p>
+    <div class="flow">
+      <article><b>BUSINESS</b><h3>供应链与组织网络</h3><p>攻击不同实体的资源成本不同，实体之间的转移也受到关系限制。</p></article>
+      <article><b>CYBERSECURITY</b><h3>通信与网络安全</h3><p>攻击往往沿已有连接传播，下一步目标并非总能自由选择。</p></article>
+      <article><b>BIOLOGICAL NETWORK</b><h3>神经连接网络</h3><p>不同类型的突触形成目标层与可行攻击层，结构语义并不相同。</p></article>
+      <article><b>OBJECTIVE</b><h3>破坏速度与成本平衡</h3><p>同时降低残余连通性、节点攻击成本和跨步转移成本。</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="status">
+    <div class="eyebrow">02 · Current approaches</div>
+    <h2 class="title">ND 与 GND 仍缺少“攻击如何移动”的描述</h2>
+    <p class="intro">Network Dismantling（ND）只衡量结构破坏；Generalized Network Dismantling（GND）加入节点攻击成本，但默认每一步仍可自由跳到任意目标。真实场景中的边会产生转移成本，甚至直接限制下一步是否可达。</p>
+    <div class="model-line">
+      <article><b>ND</b><span>目标：快速降低最大连通分量；节点与边均视为同质。</span></article>
+      <article><b>GND</b><span>增加节点攻击成本；不同攻击步骤之间仍可自由跳转。</span></article>
+      <article><b>Epi_CND</b><span>允许自由选择下一目标，但显式累计节点与边的转移成本。</span></article>
+      <article><b>Ins_CND</b><span>下一目标必须与当前节点相邻，具有随时间变化的可行域。</span></article>
+    </div>
+    <figure class="paper-figure" data-image="assets/fig1.png" data-title="四类网络瓦解模型">
+      <img src="assets/fig1.png" alt="ND、GND、Epi_CND 与 Ins_CND">
+      <figcaption>四类网络瓦解模型<span>上层为需要瓦解的目标网络，下层为节点与转移成本构成的攻击成本网络。</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="motivation">
+    <div class="eyebrow">03 · Motivation & formulation</div>
+    <h2 class="title">把“目标结构”和“行动代价”拆成两个视图</h2>
+    <p class="intro">CND 用多视图 cost network 统一描述问题：目标层 Gᵗᵍᵗ 记录系统需要被破坏的连接，成本层 Gᶜᵒˢᵗ 记录节点攻击成本和步骤之间的转移代价。对应节点在不同视图中代表同一实体，因此动作空间仍保持为 n 个节点，而不是 n×L。</p>
+    <div class="split">
+      <article class="card"><h3>Episodic cost</h3><p>成本层是全连接加权网络。攻击者可以自由选择剩余节点，但策略目标会惩罚高成本的节点和昂贵的跨步转移。</p></article>
+      <article class="card accent"><h3>Instantaneous constraint</h3><p>下一动作必须沿成本层边移动。论文用极大转移惩罚将硬约束转化为可由同一 DQN 框架学习的优化问题。</p></article>
+    </div>
+    <figure class="paper-figure" data-image="assets/fig2.png" data-title="三类 ANC 曲线">
+      <img src="assets/fig2.png" alt="ND、GND 与 CND 的 ANC 曲线">
+      <figcaption>评价目标随问题定义改变<span>ND 按攻击节点比例积分，GND 按累计攻击成本积分，CND 按包含转移成本的累计策略成本积分。</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="method">
+    <div class="eyebrow">04 · Proposed method</div>
+    <h2 class="title">多视图编码负责理解状态，DQN 负责生成顺序策略</h2>
+    <p class="intro">模型不是为节点一次性打分，而是在每次删除节点后重新描述剩余网络，并预测下一动作的 Q 值。</p>
+    <div class="method-grid">
+      <div class="method-list">
+        <button class="method-step active" data-step="state"><small>STEP 01</small><b>状态与动作建模</b></button>
+        <button class="method-step" data-step="view"><small>STEP 02</small><b>视图内信息聚合</b></button>
+        <button class="method-step" data-step="cross"><small>STEP 03</small><b>跨视图表示融合</b></button>
+        <button class="method-step" data-step="policy"><small>STEP 04</small><b>DQN 策略学习</b></button>
+      </div>
+      <div class="method-detail">
+        <article class="method-panel active" data-panel="state"><h3>状态包含剩余网络与上一动作</h3><p>由于下一次转移成本依赖上一攻击节点，状态定义为剩余多视图网络与上一动作的组合；动作仍是从原网络节点中选择下一个攻击目标。</p><ul><li>输入：成本矩阵、各目标层邻接矩阵、节点属性</li><li>输出：当前状态下每个可行动作的 Q 值</li></ul><div class="formula">Sₖ = (remaining multi-view graph, previous action)</div></article>
+        <article class="method-panel" data-panel="view"><h3>GraphSAGE 提取每个视图内部结构</h3><p>每个视图加入一个虚拟节点，用 GraphSAGE 聚合邻域信息。普通节点形成视图特定表示，虚拟节点汇总整个网络层的宏观状态。</p><ul><li>目标层与成本层分别编码</li><li>保留各视图不同的局部结构</li></ul><div class="formula">intra-view neighbors → node / view embeddings</div></article>
+        <article class="method-panel" data-panel="cross"><h3>Attention 融合对应节点与整体状态</h3><p>同一实体在不同视图中的表示构成小型全连接图，通过 attention 写入虚拟视图；各视图的虚拟节点再融合为全局状态 embedding。</p><ul><li>节点 embedding 用于描述动作</li><li>状态 embedding 用于描述剩余网络</li></ul><div class="formula">zᵥ + zₛ → action-state representation</div></article>
+        <article class="method-panel" data-panel="policy"><h3>使用 DQN 学习顺序决策</h3><p>Encoder 与 Decoder 估计 Q(s,v)，使用 replay buffer、n-step return、ε-greedy 和 target Q-network 训练。损失同时包含 Q-learning 与图重构目标。</p><ul><li>输出完整节点攻击顺序</li><li>Epi_CND 与 Ins_CND 共享主体框架</li></ul><div class="formula">Q(s,v) ← r + β max Q_target(s′,v′)</div></article>
+      </div>
+    </div>
+    <figure class="paper-figure" data-image="assets/fig3.png" data-title="Epi_CND 框架">
+      <img src="assets/fig3.png" alt="Epi_CND 多视图强化学习框架">
+      <figcaption>Epi_CND 框架<span>上方为多视图图表示学习，下方为从经验回放到 Q-network 更新的强化学习流程。</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="experiments">
+    <div class="eyebrow">05 · Experimental validation</div>
+    <h2 class="title">先验证策略机制，再验证跨规模与真实网络性能</h2>
+    <p class="intro">实验包括简单网络的定性对比、50/100/200 节点 BA 合成网络、四个真实网络，以及消融与运行时间分析。统一使用 R_CND 评价破坏速度与综合成本，数值越低越好。</p>
+    <figure class="paper-figure" data-image="assets/fig4.png" data-title="四类策略的定性对比">
+      <img src="assets/fig4.png" alt="ND、GND、Epi_CND 与 Ins_CND 策略执行过程">
+      <figcaption>定性对比：问题定义改变攻击顺序<span>即使目标网络相同，节点成本、转移成本和邻接约束会产生不同的最优序列。</span></figcaption>
+    </figure>
+    <div class="metrics">
+      <div class="metric"><span>示例 · Epi_CND 策略</span><strong>0.175</strong><small>R_CND，越低越好</small></div>
+      <div class="metric"><span>示例 · ND 策略迁移到 CND</span><strong>0.375</strong><small>忽略转移成本明显变差</small></div>
+      <div class="metric"><span>Synthetic networks</span><strong>6</strong><small>Epi / Ins × 50 / 100 / 200</small></div>
+      <div class="metric"><span>Real-world networks</span><strong>4</strong><small>跨道路、合作、神经与组织</small></div>
+    </div>
+    <div class="data-layout">
+      <figure class="paper-figure" data-image="assets/fig5.png" data-title="真实网络的度分布"><img src="assets/fig5.png" alt="真实网络的度分布"><figcaption>真实网络结构差异<span>RoadNet-PA、Cond-Mat、C.Elegans 与 Intro-Ognz 的拓扑分布。</span></figcaption></figure>
+      <div class="data-copy"><article><b>Epi_CND</b><span>RoadNet-PA 与 Cond-Mat：允许自由选择下一攻击点，但计算转移代价。</span></article><article><b>Ins_CND</b><span>C.Elegans 与 Intro-Ognz：攻击必须沿成本层的已有关系继续。</span></article><article><b>Generalization</b><span>模型在 BA 合成网络上训练，并在不同规模与真实网络上验证。</span></article></div>
+    </div>
+    <div class="results"><table><thead><tr><th>Dataset</th><th>Setting</th><th>Best baseline</th><th><button class="metric-help" data-metric="rcnd" aria-expanded="false">CND · R_CND ↓</button></th><th>Result</th></tr></thead><tbody><tr><td>BA_E_50</td><td>Episodic</td><td>2.032</td><td class="best">1.923</td><td>CND 最低</td></tr><tr><td>BA_E_200</td><td>Episodic</td><td>5.552</td><td class="best">5.027</td><td>CND 最低</td></tr><tr><td>BA_I_100</td><td>Instantaneous</td><td>4.755</td><td class="best">3.450</td><td>CND 最低</td></tr><tr><td>RoadNet-PA</td><td>Episodic</td><td>79.897</td><td class="best">78.348</td><td>CND 最低</td></tr><tr><td>C.Elegans</td><td>Instantaneous</td><td>7.782</td><td class="best">7.516</td><td>CND 最低</td></tr><tr><td>Intro-Ognz</td><td>Instantaneous</td><td>1.601</td><td class="best">1.591</td><td>优势较小</td></tr></tbody></table></div>
+    <figure class="paper-figure" data-image="assets/fig6.png" data-title="合成网络上的 ANC_CND 曲线">
+      <img src="assets/fig6.png" alt="不同策略在合成网络上的 ANC_CND 曲线">
+      <figcaption>合成网络上的策略曲线<span>在 50、100 与 200 节点规模下，Epi_CND 的曲线更快下降，综合策略成本更低。</span></figcaption>
+    </figure>
+    <figure class="paper-figure" data-image="assets/fig7.png" data-title="CND 消融实验">
+      <img src="assets/fig7.png" alt="CND 消融实验">
+      <figcaption>消融实验<span>去除视图内融合、跨视图 attention、成本层或虚拟视图都会使 R_CND 上升；成本层的影响最明显。</span></figcaption>
+    </figure>
+    <div class="finding">实验结论：CND 在六个合成设置和四个真实网络上均取得最低 R_CND。Intro-Ognz 上优势较小，论文将其与该网络更接近随机网络、缺少典型幂律结构联系起来。</div>
+  </section>
+
+  <section class="section" id="conclusion">
+    <div class="eyebrow">06 · Conclusion</div>
+    <h2 class="title">结论：瓦解效果必须与行动路径共同优化</h2>
+    <div class="conclusion">
+      <article class="card"><h3>主要结论</h3><p>CND 将目标层与成本层作为多视图联合编码，并通过 Epi_CND 和 Ins_CND 覆盖自由转移与邻接约束两类场景。结果表明，显式建模转移成本能够得到与 ND、GND 明显不同且综合成本更低的攻击顺序。</p></article>
+      <article class="card"><h3>适用边界</h3><p>强化学习训练成本高于简单启发式算法；策略效果也会受到目标网络与训练分布差异影响。面对更大规模或非幂律网络，仍需进一步验证泛化与效率。</p></article>
+    </div>
+  </section>
+
+  <div class="footer">CND · Dismantling strategies for cost networks based on multi-view deep learning</div>
+</main>
+
+<aside class="metric-popover" id="metricPopover" role="dialog" aria-live="polite"><button class="metric-close" id="metricClose" aria-label="关闭指标说明">×</button><h3 id="metricTitle"></h3><p id="metricDefinition"></p><div class="metric-formula" id="metricFormula"></div><small id="metricNote"></small></aside>
+<dialog id="dialog"><div class="dialog-head"><span id="dialogTitle">论文图</span><button id="dialogClose">关闭</button></div><div class="dialog-body"><img id="dialogImage" alt="论文图预览"></div></dialog>
+<script>
+  document.querySelectorAll('.method-step').forEach(function(step){step.addEventListener('click',function(){document.querySelectorAll('.method-step').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.method-panel').forEach(function(x){x.classList.remove('active')});step.classList.add('active');document.querySelector('[data-panel="'+step.dataset.step+'"]').classList.add('active')})});
+  const dialog=document.getElementById('dialog'),dialogImage=document.getElementById('dialogImage'),dialogTitle=document.getElementById('dialogTitle');document.querySelectorAll('[data-image]').forEach(function(el){el.addEventListener('click',function(){dialogImage.src=el.dataset.image;dialogTitle.textContent=el.dataset.title||'论文图';dialog.showModal()})});document.getElementById('dialogClose').addEventListener('click',function(){dialog.close()});dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close()});
+  const metricInfo={rcnd:{title:'R_CND · 成本网络瓦解指标',definition:'沿攻击序列累计每一步的残余连通性，并同时乘入当前节点攻击成本与相邻攻击之间的转移成本。',formula:'R_CND(π) = Σₖ [σ(Gₖ) / σ(G)] · w(vₖ₋₁,vₖ) · w(vₖ,vₖ)',note:'越低越好：表示用更低的攻击与转移成本，更快破坏网络连通性。'}};
+  const metricPopover=document.getElementById('metricPopover'),metricTitle=document.getElementById('metricTitle'),metricDefinition=document.getElementById('metricDefinition'),metricFormula=document.getElementById('metricFormula'),metricNote=document.getElementById('metricNote');let activeMetricButton=null;function closeMetricPopover(){metricPopover.classList.remove('open');if(activeMetricButton)activeMetricButton.setAttribute('aria-expanded','false');activeMetricButton=null}function openMetricPopover(button){const info=metricInfo[button.dataset.metric],rect=button.getBoundingClientRect();if(activeMetricButton===button&&metricPopover.classList.contains('open')){closeMetricPopover();return}closeMetricPopover();activeMetricButton=button;button.setAttribute('aria-expanded','true');metricTitle.textContent=info.title;metricDefinition.textContent=info.definition;metricFormula.textContent=info.formula;metricNote.textContent=info.note;metricPopover.classList.add('open');const width=metricPopover.offsetWidth;let left=rect.left+rect.width/2-width/2;left=Math.max(12,Math.min(left,window.innerWidth-width-12));metricPopover.style.left=left+'px';metricPopover.style.top=(rect.bottom+12)+'px';metricPopover.style.setProperty('--arrow-left',(rect.left+rect.width/2-left-7)+'px')}document.querySelectorAll('.metric-help').forEach(function(button){button.addEventListener('click',function(event){event.stopPropagation();openMetricPopover(button)})});document.getElementById('metricClose').addEventListener('click',closeMetricPopover);document.addEventListener('click',function(event){if(!metricPopover.contains(event.target))closeMetricPopover()});document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMetricPopover()});window.addEventListener('resize',closeMetricPopover);
+</script>
+</body>
+</html>

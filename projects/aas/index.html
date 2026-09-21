@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AAS · 项目介绍</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root{--cream:#fbf6e9;--paper:#fff;--ink:#20201e;--soft:#5e5a51;--muted:#918a7b;--line:#e5decd;--amber:#f9aa2a;--amber-bg:#fff0d2;--blue:#85c6dc;--blue-bg:#e7f4f8;--green:#75bd79;--green-bg:#e9f5e8;--purple:#56308a;--dark:#282622;--shadow:0 14px 36px rgba(45,37,24,.10);--max:1120px;font-family:Lato,"PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);line-height:1.7}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}main{max-width:var(--max);margin:auto;padding:34px 24px 86px}.return{display:inline-flex;align-items:center;padding:9px 14px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--soft);font-weight:800;font-size:.82rem}.hero{margin-top:28px;padding:58px 56px;background:var(--dark);color:#fff;border-radius:30px;box-shadow:0 24px 60px rgba(30,24,14,.25);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:390px;height:390px;border-radius:50%;right:-145px;top:-180px;background:rgba(249,170,42,.22)}.kicker,.eyebrow{color:var(--amber);font-size:.75rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{position:relative;z-index:1;font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.04;letter-spacing:-1.5px;margin:14px 0 20px}.hero h1 span{display:block;color:var(--amber)}.hero p{position:relative;z-index:1;max-width:790px;margin:0;color:rgba(255,255,255,.8);font-size:1.08rem}.hero strong{color:var(--amber)}.hero-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}.hero-meta span{padding:6px 11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);border-radius:99px;font-size:.76rem;font-weight:800}.section{margin-top:96px}.title{font-size:clamp(1.9rem,4vw,2.65rem);line-height:1.14;margin:8px 0 12px}.intro{max-width:840px;color:var(--soft);margin:0}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:27px}.flow article,.card{background:#fff;border:1.5px solid var(--line);border-radius:19px;padding:21px;box-shadow:0 2px 9px rgba(45,37,24,.04)}.flow b{display:block;color:var(--amber);font-size:.72rem;letter-spacing:1px;margin-bottom:8px}.flow h3,.card h3{font-size:1.02rem;margin:0 0 7px}.flow p,.card p{font-size:.87rem;color:var(--soft);margin:0}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}.card.accent{background:var(--dark);color:#fff;border-color:var(--dark)}.card.accent p{color:rgba(255,255,255,.75)}.card ul{margin:10px 0 0;padding-left:19px;color:var(--soft);font-size:.88rem}.card li+li{margin-top:7px}.card.accent ul{color:rgba(255,255,255,.75)}.paper-figure{margin:28px 0 0;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:15px;box-shadow:0 3px 14px rgba(45,37,24,.05);cursor:zoom-in;transition:.25s}.paper-figure:hover{border-color:var(--amber);box-shadow:var(--shadow);transform:translateY(-2px)}.paper-figure img{width:100%;height:auto;border-radius:13px}.paper-figure figcaption{margin:12px 5px 2px;font-size:.88rem;font-weight:900}.paper-figure figcaption span{display:block;color:var(--muted);font-size:.75rem;font-weight:700;margin-top:2px}.wide-figure{padding:18px 20px}.method-shell{margin-top:27px;background:var(--dark);border-radius:26px;padding:24px}.method-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.method-tab{border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.07);color:#fff;padding:15px;text-align:left;cursor:pointer;font:inherit}.method-tab small{display:block;color:var(--amber);font-weight:900;letter-spacing:1px;margin-bottom:5px}.method-tab b{font-size:.92rem}.method-tab.active{background:var(--amber);color:var(--ink)}.method-tab.active small{color:var(--ink)}.method-panel{margin-top:14px;border-radius:17px;background:#fff;padding:22px;display:none}.method-panel.active{display:grid;grid-template-columns:.85fr 1.15fr;gap:23px;align-items:center}.method-panel h3{margin:0 0 7px;font-size:1.18rem}.method-panel p{color:var(--soft);font-size:.9rem;margin:0}.method-panel .formula{margin-top:13px;padding:10px 12px;border-radius:10px;background:var(--amber-bg);font:700 .78rem ui-monospace,Menlo,monospace}.method-panel .formula-full{font-size:.7rem;line-height:1.7}.formula-full span{display:block}.formula-full .formula-indent{padding-left:1.5em}.formula-full .formula-constraints{margin-top:5px;color:var(--soft);font-size:.92em}.method-panel img{width:100%;max-height:260px;object-fit:contain}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:26px}.metric{background:#fff;border:1.5px solid var(--line);border-top:5px solid var(--amber);border-radius:17px;padding:16px}.metric:nth-child(2){border-top-color:var(--blue)}.metric:nth-child(3){border-top-color:var(--green)}.metric:nth-child(4){border-top-color:var(--purple)}.metric span{display:block;color:var(--muted);font-size:.71rem;font-weight:900}.metric strong{display:block;font-size:1.7rem;margin-top:4px}.metric small{color:var(--soft);font-size:.72rem}.results{margin-top:18px;overflow:auto;border:1.5px solid var(--line);border-radius:18px;background:#fff}.results table{width:100%;min-width:690px;border-collapse:collapse;font-size:.83rem}.results th,.results td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}.results th{background:var(--dark);color:#fff}.best{color:#d94730;font-weight:900}.figure-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}.evidence-card{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center;margin-top:22px;background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:20px}.evidence-card img{width:100%;max-height:330px;object-fit:contain}.evidence-card h3{font-size:1.2rem;margin:0 0 8px}.evidence-card p{color:var(--soft);font-size:.9rem;margin:0}.evidence-card .tag{display:inline-block;margin-top:13px;padding:5px 9px;border-radius:99px;background:var(--green-bg);color:#34723a;font-size:.72rem;font-weight:900}.conclusion{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:26px}.conclusion .card{padding:24px}.conclusion .card:first-child{border-left:5px solid var(--amber)}.footer{margin-top:54px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:.78rem}dialog{border:0;border-radius:20px;padding:0;width:min(980px,94vw);background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.28)}dialog::backdrop{background:rgba(25,21,15,.72)}.dialog-head{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;border-bottom:1px solid var(--line);font-weight:900}.dialog-head button{border:0;border-radius:8px;background:var(--dark);color:#fff;padding:7px 10px}.dialog-body{padding:14px;max-height:82vh;overflow:auto}.dialog-body img{width:100%;height:auto}
+    @media(max-width:820px){.flow,.metrics{grid-template-columns:1fr 1fr}.split,.evidence-card,.conclusion{grid-template-columns:1fr}.method-panel.active{grid-template-columns:1fr}.figure-pair{grid-template-columns:1fr}.method-tabs{grid-template-columns:1fr}}
+    .hero h1{font-size:clamp(2.45rem,5.2vw,4.2rem)}
+    @media(max-width:520px){main{padding:22px 15px 58px}.hero{padding:36px 24px}.hero h1{font-size:2.55rem}.section{margin-top:72px}.flow,.metrics{grid-template-columns:1fr}.paper-figure{padding:9px}}
+    .metric-help{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:inherit;font:inherit;font-weight:900;padding:3px 5px;border-radius:7px;cursor:pointer}.metric-help::after{content:"?";display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);font-size:.66rem}.metric-help:hover,.metric-help:focus-visible{background:rgba(255,255,255,.12);outline:none}.metric-popover{position:fixed;z-index:80;width:min(330px,calc(100vw - 24px));padding:16px 17px;background:var(--dark);color:#fff;border:1px solid rgba(255,255,255,.16);border-radius:15px;box-shadow:0 18px 45px rgba(25,20,12,.28);opacity:0;visibility:hidden;transform:translateY(-5px);transition:.18s}.metric-popover.open{opacity:1;visibility:visible;transform:translateY(0)}.metric-popover::before{content:"";position:absolute;top:-7px;left:var(--arrow-left,28px);width:13px;height:13px;background:var(--dark);transform:rotate(45deg);border-left:1px solid rgba(255,255,255,.16);border-top:1px solid rgba(255,255,255,.16)}.metric-popover h3{margin:0 0 5px;color:var(--amber);font-size:1rem}.metric-popover p{margin:0;color:rgba(255,255,255,.78);font-size:.8rem;line-height:1.6}.metric-popover .metric-formula{margin:10px 0 8px;padding:9px 10px;border-radius:9px;background:rgba(255,255,255,.08);color:#fff;font:700 .75rem ui-monospace,Menlo,monospace;overflow-x:auto}.metric-popover small{display:block;color:rgba(255,255,255,.58);font-size:.7rem}.metric-close{position:absolute;right:10px;top:9px;border:0;background:transparent;color:rgba(255,255,255,.6);font-size:1rem;cursor:pointer}@media(max-width:520px){.metric-popover{position:fixed;left:12px!important;right:12px;bottom:14px;top:auto!important;width:auto}.metric-popover::before{display:none}}
+  </style>
+</head>
+<body>
+<main>
+  <a class="return" href="../../index.html#research">← 返回个人主页 · 科研</a>
+
+  <header class="hero">
+    <div class="kicker">Multi-view clustering · AAS</div>
+    <h1>融合属性与有向结构的<span>多视图聚类</span></h1>
+    <p>AAS 面向同时具有<strong>节点属性、多个视图和有向关系</strong>的数据。核心思想是以 anchors 为桥梁，将“属性上相近”与“结构上属于同一强连通区域”共同写入相似矩阵，再在统一优化框架中得到聚类结果。</p>
+    <div class="hero-meta"><span>Neurocomputing 630 (2025)</span><span>Anchor-based clustering</span><span>Directed graph structure</span></div>
+  </header>
+
+  <section class="section" id="background">
+    <div class="eyebrow">01 · Application background</div>
+    <h2 class="title">真实对象往往同时拥有“属性”和“关系”</h2>
+    <p class="intro">社交平台中的用户既有文本或画像属性，也存在关注、信任等有向关系；贸易网络中的国家有经济指标，也存在进口与出口方向。多视图聚类希望综合这些来源，发现单一视角下不明显的群体结构。</p>
+    <div class="flow">
+      <article><b>APPLICATION</b><h3>社交社区</h3><p>用户属性描述个体特征，有向互动关系反映信任与影响传播。</p></article>
+      <article><b>APPLICATION</b><h3>贸易网络</h3><p>经济指标提供属性视图，进口与出口形成非对称结构视图。</p></article>
+      <article><b>APPLICATION</b><h3>神经与通信网络</h3><p>节点功能和连接方向共同决定潜在模块，结构不能被简单无向化。</p></article>
+      <article><b>GOAL</b><h3>发现共识簇</h3><p>融合不同视图的互补信息，输出稳定、可解释的聚类划分。</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="status">
+    <div class="eyebrow">02 · Current approaches</div>
+    <h2 class="title">现有方法能融合多视图，却常常忽略真实拓扑</h2>
+    <p class="intro">多数多视图聚类方法根据节点属性构造相似矩阵；即使使用结构，也常将有向关系对称化，损失非对称信息。Anchor 方法可以降低大规模聚类的复杂度，但常在所有视图中使用固定数量甚至同一组 anchors。</p>
+    <div class="split">
+      <article class="card"><h3>已有方法解决了什么</h3><ul><li>通过图或子空间学习融合多个属性视图</li><li>用 anchors 将节点级相似性压缩为节点到 anchor 的关系</li><li>通过谱嵌入或非负嵌入生成最终聚类结果</li></ul></article>
+      <article class="card accent"><h3>仍然存在的缺口</h3><ul><li>方向性结构经常被丢弃，无法利用强连通模式</li><li>统一的 anchor 选择限制不同视图的代表性</li><li>相似矩阵构建与聚类分步优化，容易得到次优融合</li></ul></article>
+    </div>
+  </section>
+
+  <section class="section" id="motivation">
+    <div class="eyebrow">03 · Motivation</div>
+    <h2 class="title">让结构信息直接参与“谁与谁更相似”</h2>
+    <p class="intro">AAS 的动机不是把结构特征简单拼到属性后面，而是利用有向图的强连通分量寻找潜在簇，让同一结构区域内的 anchors 进一步靠近，从而强化相似矩阵中的块状聚类信号。</p>
+    <figure class="paper-figure wide-figure" data-image="assets/figure1.png" data-title="AAS 总体框架">
+      <img src="assets/figure1.png" alt="AAS 总体框架">
+      <figcaption>AAS 总体框架<span>上半部分展示属性与结构相似性的融合，下半部分展示经由 anchors 的两步 proximity。</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="method">
+    <div class="eyebrow">04 · Proposed method</div>
+    <h2 class="title">从结构引导的 anchors，到统一聚类表示</h2>
+    <p class="intro">方法由三个相互衔接的模块组成。点击模块可查看其输入、作用和输出。</p>
+    <div class="method-shell">
+      <div class="method-tabs">
+        <button class="method-tab active" data-tab="anchor"><small>STEP 01</small><b>结构引导的 anchor 选择</b></button>
+        <button class="method-tab" data-tab="similarity"><small>STEP 02</small><b>两步相似性构造</b></button>
+        <button class="method-tab" data-tab="fusion"><small>STEP 03</small><b>统一多视图优化</b></button>
+      </div>
+      <article class="method-panel active" data-panel="anchor"><div><h3>先在每个视图中识别强连通分量</h3><p>通过概率转移矩阵的左特征向量迭代识别强连通分量，并在每个分量内依据中心性选择 anchors。不同视图可以拥有不同数量和不同位置的 anchors。</p><div class="formula">directed graph → SCCs → centrality-ranked anchors</div></div><img src="assets/figure2.png" alt="anchor 结构相似矩阵构建示例"></article>
+      <article class="method-panel" data-panel="similarity"><div><h3>属性 proximity + 结构 proximity</h3><p>第一步构造节点到 anchors 的属性相似矩阵；第二步根据有向最短路和强连通分量构造 anchor 结构相似矩阵，使同一结构簇中的 anchors 更接近。</p><div class="formula">Sᵢ = attribute similarity · structural similarity</div></div><img src="assets/figure2.png" alt="两步 proximity 示例"></article>
+      <article class="method-panel" data-panel="fusion"><div><h3>在同一目标函数中学习共识聚类</h3><p>将融合后的相似矩阵送入调整后的 NESE 框架，交替更新节点-聚类表示 H、各视图谱表示 Fᵢ、视图权重 pᵢ 与属性相似矩阵。</p><div class="formula formula-full"><span>min<sub>{S̄ⁱ,H,Fⁱ,pᵢ}</sub> Σᵢ₌₁ᵛ ‖Xⁱ − X̄ⁱ(S̄ⁱ)ᵀ‖²<sub>F</sub> + α‖S̄ⁱ‖²<sub>F</sub></span><span class="formula-indent">+ Σᵢ₌₁ᵛ (1/pᵢ) ‖S̄ⁱS̃ⁱ − H(Fⁱ)ᵀ‖²<sub>F</sub></span><span class="formula-constraints">s.t. S̄ⁱ ≥ 0, (S̄ⁱ)ᵀ1 = 1, H ≥ 0,</span><span class="formula-constraints">(Fⁱ)ᵀFⁱ = I, pᵢ ≥ 0, Σᵢ₌₁ᵛpᵢ = 1.</span></div></div><img src="assets/figure1.png" alt="统一多视图聚类框架"></article>
+    </div>
+  </section>
+
+  <section class="section" id="experiments">
+    <div class="eyebrow">05 · Experimental validation</div>
+    <h2 class="title">结构信号在小规模、大规模和无属性场景中都有效</h2>
+    <p class="intro">实验覆盖 Attribute SBM_50、Attribute SBM_10000，以及只有三视图有向结构而无有效节点属性的 Seventh graders。评价指标为 ACC、NMI 与 Purity。</p>
+    <div class="metrics">
+      <div class="metric"><span>SBM_50 · ACC</span><strong>0.932</strong><small>对比方法中的最佳结果</small></div>
+      <div class="metric"><span>SBM_50 · NMI</span><strong>0.852</strong><small>结构融合提升簇一致性</small></div>
+      <div class="metric"><span>SBM_10000 · ACC</span><strong>0.815</strong><small>扩展到 10,000 节点</small></div>
+      <div class="metric"><span>Seventh graders · ACC</span><strong>0.882</strong><small>无有效属性时仍可聚类</small></div>
+    </div>
+    <div class="results"><table><thead><tr><th>Dataset</th><th>Method</th><th><button class="metric-help" data-metric="acc" aria-expanded="false">ACC</button></th><th><button class="metric-help" data-metric="nmi" aria-expanded="false">NMI</button></th><th><button class="metric-help" data-metric="purity" aria-expanded="false">Purity</button></th></tr></thead><tbody><tr><td>Attribute SBM_50</td><td>AAS</td><td class="best">0.932</td><td class="best">0.852</td><td class="best">0.932</td></tr><tr><td>Attribute SBM_10000</td><td>AAS</td><td class="best">0.815</td><td class="best">0.789</td><td class="best">0.815</td></tr><tr><td>Seventh graders</td><td>AAS</td><td class="best">0.882</td><td class="best">0.693</td><td class="best">0.891</td></tr><tr><td>Seventh graders</td><td>K-means</td><td>0.655</td><td>0.052</td><td>0.655</td></tr></tbody></table></div>
+    <div class="figure-pair">
+      <figure class="paper-figure" data-image="assets/figure3.png" data-title="三视图网络结构"><img src="assets/figure3.png" alt="三视图网络结构"><figcaption>结构视图<span>三个视图拥有互补的有向拓扑。</span></figcaption></figure>
+      <figure class="paper-figure" data-image="assets/figure4.png" data-title="三视图属性分布"><img src="assets/figure4.png" alt="三视图属性分布"><figcaption>属性视图<span>仅依赖属性时，局部簇边界仍然重叠。</span></figcaption></figure>
+    </div>
+    <div class="evidence-card"><img src="assets/figure6.png" alt="AAS 参数敏感性分析"><div><h3>参数分析与计算性质</h3><p>α 控制属性相似矩阵中的正则项，θ 控制各强连通分量的 anchor 比例。实验显示 α=0.1、θ=0.3 在当前设置下较优；算法约在 20 次迭代内基本收敛。</p><span class="tag">convergence + sensitivity</span></div></div>
+  </section>
+
+  <section class="section" id="conclusion">
+    <div class="eyebrow">06 · Conclusion</div>
+    <h2 class="title">结论：有向结构可以成为相似性学习中的先验</h2>
+    <div class="conclusion">
+      <article class="card"><h3>主要结论</h3><p>AAS 通过结构引导的 anchors 和两步 proximity，将节点属性、强连通结构与多视图共识聚类放入统一框架。实验表明，明确利用有向结构能够提升聚类准确率，且在属性缺失时仍能提供有效信号。</p></article>
+      <article class="card"><h3>适用边界</h3><p>方法依赖有向网络中可利用的强连通模式；结构融合会增加计算开销。面向更复杂、更稀疏或更大规模的真实网络，anchor 构造与优化效率仍有改进空间。</p></article>
+    </div>
+  </section>
+
+  <div class="footer">AAS · Multi-view clustering integrating anchor attribute and structural information</div>
+</main>
+
+<aside class="metric-popover" id="metricPopover" role="dialog" aria-live="polite"><button class="metric-close" id="metricClose" aria-label="关闭指标说明">×</button><h3 id="metricTitle"></h3><p id="metricDefinition"></p><div class="metric-formula" id="metricFormula"></div><small id="metricNote"></small></aside>
+<dialog id="dialog"><div class="dialog-head"><span id="dialogTitle">论文图</span><button id="dialogClose">关闭</button></div><div class="dialog-body"><img id="dialogImage" alt="论文图预览"></div></dialog>
+<script>
+  document.querySelectorAll('.method-tab').forEach(function(tab){tab.addEventListener('click',function(){document.querySelectorAll('.method-tab').forEach(function(x){x.classList.remove('active')});document.querySelectorAll('.method-panel').forEach(function(x){x.classList.remove('active')});tab.classList.add('active');document.querySelector('[data-panel="'+tab.dataset.tab+'"]').classList.add('active')})});
+  const dialog=document.getElementById('dialog'),dialogImage=document.getElementById('dialogImage'),dialogTitle=document.getElementById('dialogTitle');document.querySelectorAll('[data-image]').forEach(function(el){el.addEventListener('click',function(){dialogImage.src=el.dataset.image;dialogTitle.textContent=el.dataset.title||'论文图';dialog.showModal()})});document.getElementById('dialogClose').addEventListener('click',function(){dialog.close()});dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close()});
+  const metricInfo={acc:{title:'ACC · 聚类准确率',definition:'先将预测簇编号与真实类别做最佳一一匹配，再统计被正确分配的样本比例。',formula:'ACC = (1 / n) Σᵢ 𝟙[yᵢ = map(ŷᵢ)]',note:'取值范围 0–1，越高越好；map 通常通过匈牙利算法获得。'},nmi:{title:'NMI · 归一化互信息',definition:'衡量预测聚类与真实标签共享的信息量，并用双方的信息熵进行归一化。',formula:'NMI = 2 I(Y; Ŷ) / [H(Y) + H(Ŷ)]',note:'取值范围通常为 0–1，越高表示两个划分越一致。'},purity:{title:'Purity · 聚类纯度',definition:'对每个预测簇，找到其中数量最多的真实类别；将这些多数类样本数相加后除以总样本数。',formula:'Purity = (1 / n) Σₖ maxⱼ |Cₖ ∩ Lⱼ|',note:'取值范围 0–1，越高越好；簇数量过多时该指标可能偏高。'}};
+  const metricPopover=document.getElementById('metricPopover'),metricTitle=document.getElementById('metricTitle'),metricDefinition=document.getElementById('metricDefinition'),metricFormula=document.getElementById('metricFormula'),metricNote=document.getElementById('metricNote');let activeMetricButton=null;
+  function closeMetricPopover(){metricPopover.classList.remove('open');if(activeMetricButton)activeMetricButton.setAttribute('aria-expanded','false');activeMetricButton=null}
+  function openMetricPopover(button){const info=metricInfo[button.dataset.metric],rect=button.getBoundingClientRect();if(activeMetricButton===button&&metricPopover.classList.contains('open')){closeMetricPopover();return}closeMetricPopover();activeMetricButton=button;button.setAttribute('aria-expanded','true');metricTitle.textContent=info.title;metricDefinition.textContent=info.definition;metricFormula.textContent=info.formula;metricNote.textContent=info.note;metricPopover.classList.add('open');const width=metricPopover.offsetWidth;let left=rect.left+rect.width/2-width/2;left=Math.max(12,Math.min(left,window.innerWidth-width-12));metricPopover.style.left=left+'px';metricPopover.style.top=(rect.bottom+12)+'px';metricPopover.style.setProperty('--arrow-left',(rect.left+rect.width/2-left-7)+'px')}
+  document.querySelectorAll('.metric-help').forEach(function(button){button.addEventListener('click',function(event){event.stopPropagation();openMetricPopover(button)})});document.getElementById('metricClose').addEventListener('click',closeMetricPopover);document.addEventListener('click',function(event){if(!metricPopover.contains(event.target))closeMetricPopover()});document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMetricPopover()});window.addEventListener('resize',closeMetricPopover);
+</script>
+</body>
+</html>

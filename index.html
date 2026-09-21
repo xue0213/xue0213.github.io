@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>李雪彤 · 个人简历</title>
+<link rel="icon" href="data:," />
 
 <!-- 参考视觉系统采用 Lato 字体（联网生效，离线自动回退到系统字体，不影响布局） -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -104,8 +105,6 @@ img{ display:block; max-width:100%; }
 .nav-links button[data-target="experience"]{ background:var(--blue);   color:var(--ink); }
 .nav-links button[data-target="research"]{    background:var(--green); color:var(--ink); }
 .nav-links button[data-target="education"]{   background:var(--purple); }
-.nav-links button[data-target="skills"]{       background:var(--red); }
-.nav-links button[data-target="honors"]{       background:var(--taupe); }
 
 .nav-links button:hover{ opacity:1; transform:translateY(0); filter:brightness(1.04); }
 .nav-links button.active{   /* 选中：完全弹起 + 阴影，像被抽出的索引页 */
@@ -259,7 +258,7 @@ main{ max-width:var(--maxw); margin:0 auto; padding:44px 24px 80px; }
 .point-list li b{ color:var(--ink); font-weight:700; }
 .metric{ display:inline-block; font-weight:700; color:var(--ink); background:var(--blue-bg); padding:1px 9px; border-radius:6px; margin:0 2px; }
 
-/* 项目详情展开：承载「多模态内容风控审核智能体系统」PPT 信息 */
+/* 实习详情展开 */
 .project-expand{ margin-top:24px; padding-top:22px; border-top:1.5px dashed var(--line); }
 .project-toggle{
   font-family:var(--font); font-size:.92rem; font-weight:900; cursor:pointer;
@@ -300,6 +299,19 @@ main{ max-width:var(--maxw); margin:0 auto; padding:44px 24px 80px; }
 .detail-panel h5{ font-size:.9rem; font-weight:900; color:var(--taupe); margin-bottom:10px; }
 .detail-note{ color:var(--ink-soft); font-size:.95rem; margin-bottom:16px; }
 .hl{ color:var(--red); font-weight:900; }
+.research-impact{
+  margin-top:16px; padding:18px 20px; border-radius:14px;
+  border-left:5px solid var(--amber); background:var(--dark); color:var(--white);
+}
+.research-impact b{ display:block; color:var(--amber); font-size:.94rem; margin-bottom:6px; }
+.research-impact p{ color:rgba(255,255,255,.78); font-size:.9rem; margin:0; }
+.research-link{
+  display:inline-flex; align-items:center; gap:6px; margin-top:13px;
+  padding:7px 11px; border:1px solid rgba(255,255,255,.22); border-radius:9px;
+  color:var(--white); font-size:.78rem; font-weight:900;
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.research-link:hover{ border-color:var(--amber); color:var(--amber); transform:translateY(-1px); }
 
 .audit-flow{
   display:grid; grid-template-columns:1fr auto 1fr auto 1fr; align-items:center; gap:12px;
@@ -407,6 +419,9 @@ main{ max-width:var(--maxw); margin:0 auto; padding:44px 24px 80px; }
 .pub-no{ font-weight:900; font-size:1.15rem; color:var(--ink); min-width:34px; padding-top:1px; }
 .pub-body .pub-title{ font-weight:700; color:var(--ink); line-height:1.5; margin-bottom:6px; }
 .pub-body .pub-meta{ font-size:.86rem; color:var(--muted); }
+.pub-link{ display:block; }
+.pub-link .pub{ cursor:pointer; }
+.pub-link .pub-title::after{ content:" ↗"; color:var(--purple); font-weight:900; opacity:.7; }
 .pub-venue{ display:inline-block; font-weight:700; font-size:.72rem; padding:2px 11px; border-radius:6px; margin-left:6px; }
 .venue-pub{ color:#1c6b85; background:var(--blue-bg); }
 .venue-review{ color:#a05a16; background:var(--amber-bg); }
@@ -452,60 +467,7 @@ main{ max-width:var(--maxw); margin:0 auto; padding:44px 24px 80px; }
 .edu-honor-list li::before{ content:""; position:absolute; left:0; top:9px; width:8px; height:8px; border-radius:2px; background:var(--amber); }
 
 /* ============================================================
-   9. 技能 —— 黑色气泡 tab 卡片（对应 SOLUTION 页）
-   ============================================================ */
-.bubble-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:34px 26px; margin-top:26px; }
-.bubble-card{
-  position:relative; background:var(--white); border:1.5px solid var(--line); border-radius:var(--radius);
-  padding:44px 28px 30px; text-align:center; box-shadow:var(--shadow-sm);
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-.bubble-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
-.bubble-tab{   /* 黑色气泡标签，骑在卡片顶边，带向下小三角 */
-  position:absolute; top:0; left:50%; transform:translate(-50%,-50%);
-  background:var(--dark); color:#fff; font-weight:900; font-size:1.02rem;
-  padding:11px 28px; border-radius:16px; white-space:nowrap; box-shadow:var(--shadow-sm);
-}
-.bubble-tab::after{ content:""; position:absolute; bottom:-7px; left:50%; transform:translateX(-50%); border-left:9px solid transparent; border-right:9px solid transparent; border-top:9px solid var(--dark); }
-
-.skill-icon{ width:52px; height:52px; margin:0 auto 18px; border-radius:15px; display:flex; align-items:center; justify-content:center; background:var(--amber-bg); }
-.skill-icon svg{ width:26px; height:26px; stroke:var(--ink); fill:none; stroke-width:2; }
-.bubble-card:nth-child(2) .skill-icon{ background:var(--blue-bg); }
-.bubble-card:nth-child(3) .skill-icon{ background:var(--purple-bg); }
-.bubble-card:nth-child(4) .skill-icon{ background:var(--red-bg); }
-.skill-tags{ display:flex; flex-wrap:wrap; gap:9px; justify-content:center; }
-.skill-tags span{
-  font-size:.86rem; font-weight:700; color:var(--ink-soft);
-  background:var(--cream); border:1.5px solid var(--line); padding:7px 14px; border-radius:10px;
-  transition:transform .2s ease, color .2s ease, border-color .2s ease, background .2s ease;
-}
-.skill-tags span:hover{ transform:translateY(-2px); color:var(--ink); border-color:var(--amber); background:var(--amber-bg); }
-.skill-tags span.core{ border-color:var(--amber); background:var(--amber-bg); color:var(--ink); font-weight:900; }
-.skill-tags span.core:hover{ filter:brightness(1.06); }
-.skill-legend{ display:flex; align-items:center; gap:24px; margin-bottom:28px; flex-wrap:wrap; }
-.skill-legend-item{ display:flex; align-items:center; gap:8px; font-size:.82rem; font-weight:700; color:var(--ink-soft); }
-.legend-pip{ width:11px; height:11px; border-radius:50%; display:inline-block; }
-.legend-pip.core{ background:var(--amber); }
-.legend-pip.basic{ background:var(--cream); border:2px solid var(--muted); }
-
-/* ============================================================
-   10. 荣誉 —— 琥珀色面板 + 白卡 + 黑气泡 tab（强化 SOLUTION 页观感）
-   ============================================================ */
-.honor-panel{ background:var(--amber); border-radius:28px; padding:46px 40px 40px; box-shadow:var(--shadow-md); }
-.honor-panel .panel-note{ color:var(--ink); font-weight:700; font-size:1.05rem; margin-bottom:34px; }
-.honor-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:34px 26px; }
-.honor-card{
-  position:relative; background:var(--white); border-radius:var(--radius);
-  padding:48px 24px 30px; text-align:center; box-shadow:var(--shadow-sm);
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-.honor-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-md); }
-.honor-medal{ font-size:2.4rem; margin-bottom:14px; }
-.honor-card h3{ font-size:1.05rem; font-weight:900; line-height:1.45; margin-bottom:8px; }
-.honor-card p{ font-size:.84rem; font-weight:700; color:var(--muted); }
-
-/* ============================================================
-   11. 页脚
+   9. 页脚
    ============================================================ */
 footer{ text-align:center; padding:36px 24px; color:var(--muted); font-size:.86rem; font-weight:700; border-top:1px solid var(--line); }
 footer .foot-link{ color:var(--taupe); }
@@ -515,7 +477,7 @@ footer .foot-link{ color:var(--taupe); }
 @keyframes revealUp{ to{ opacity:1; transform:translateY(0);} }
 
 /* ============================================================
-   12. 响应式适配（移动端）
+   10. 响应式适配（移动端）
    ============================================================ */
 @media (max-width:880px){
   .menu-toggle{ display:flex; }
@@ -540,8 +502,6 @@ footer .foot-link{ color:var(--taupe); }
   .hero-portrait{ order:-1; }
   .avatar-frame{ width:230px; height:300px; }
 
-  .bubble-grid{ grid-template-columns:1fr; gap:40px; }
-  .honor-grid{ grid-template-columns:1fr; gap:40px; }
   .audit-flow,
   .model-chain{ grid-template-columns:1fr; }
   .flow-arrow,
@@ -559,7 +519,116 @@ footer .foot-link{ color:var(--taupe); }
   main{ padding:30px 16px 64px; }
   .nav-inner{ padding:13px 16px; }
   .card{ padding:24px; }
-  .honor-panel{ padding:34px 20px; }
+}
+/* 首页文字主视觉：去除照片后扩大内容宽度与呼吸感 */
+#home .hero{grid-template-columns:1fr;padding:70px 76px}
+#home .hero-text{max-width:820px}
+#home .hero-lead{max-width:760px;font-size:1.15rem;line-height:1.9;margin-bottom:30px}
+#home .hero-meta{margin-top:6px;margin-bottom:0}
+@media(max-width:880px){#home .hero{padding:52px 42px;text-align:left}#home .hero-lead{margin-left:0;margin-right:0}}
+@media(max-width:480px){#home .hero{padding:42px 26px}#home .hero h1{font-size:2.9rem}#home .hero-lead{font-size:1rem;line-height:1.8}}
+
+/* 合并后的双页结构：每个页面中的第二部分以留白和细分隔线自然衔接 */
+.merged-continuation{
+  position:relative;
+  margin-top:96px;
+  padding-top:76px;
+  border-top:1px solid var(--line);
+  scroll-margin-top:92px;
+}
+.merged-continuation::before{
+  content:"";
+  position:absolute;
+  top:-2px;
+  left:0;
+  width:76px;
+  height:4px;
+  border-radius:99px;
+  background:var(--amber);
+}
+@media(max-width:880px){.merged-continuation{margin-top:72px;padding-top:58px}}
+@media(max-width:480px){.merged-continuation{margin-top:58px;padding-top:46px}}
+
+/* 科研与实践脉络：以柔和曲线箭头呈现方向、分叉与汇聚 */
+.research-roadmap{
+  position:relative; margin:0 0 50px; padding:10px 0 16px; overflow:visible;
+  background:
+    radial-gradient(ellipse at 43% 53%, rgba(111,191,115,.075), transparent 24%),
+    radial-gradient(ellipse at 91% 45%, rgba(252,176,52,.055), transparent 22%);
+}
+.roadmap-canvas{ position:relative; height:460px; }
+.roadmap-lines{ position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+.roadmap-lines .roadmap-arrow{
+  fill:none; stroke:url(#vineGradient); stroke-width:7; stroke-linecap:butt; stroke-linejoin:round;
+  opacity:.9; vector-effect:non-scaling-stroke;
+  filter:drop-shadow(0 2px 3px rgba(68,91,72,.15));
+}
+.roadmap-lines .roadmap-arrow.is-dashed{
+  stroke:url(#vineGradient); stroke-dasharray:6 8; opacity:.64;
+}
+.roadmap-lines .roadmap-arrow.right-vine{ stroke:#91b379; }
+.roadmap-lines .vine-highlight{ fill:none; stroke:rgba(235,245,214,.7); stroke-width:1.55; stroke-linecap:butt; opacity:.46; transform:translate(-1px,-.85px); pointer-events:none; }
+.roadmap-lines .vine-highlight.is-dashed{ stroke-dasharray:6 8; opacity:.5; }
+.roadmap-lines .leaf-pair{ opacity:.96; }
+.roadmap-lines .vine-tendril{ fill:none; stroke:url(#vineGradient); stroke-width:2.35; stroke-linecap:round; opacity:.44; filter:drop-shadow(0 1px 2px rgba(68,91,72,.08)); }
+.roadmap-lines .vine-tendril.right-vine{ stroke:#91b379; }
+.roadmap-node{
+  --node-color:var(--amber); position:absolute; z-index:2; width:max-content; max-width:none;
+  display:flex; align-items:center; gap:11px; white-space:nowrap;
+  padding:15px 22px 15px 18px;
+  border:1px solid color-mix(in srgb, var(--node-color) 18%, var(--line));
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(255,255,255,.96), color-mix(in srgb, var(--node-color) 6%, white));
+  box-shadow:0 5px 15px rgba(47,38,24,.065), inset 0 1px 0 rgba(255,255,255,.9);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  color:var(--ink); font-family:"SF Pro Rounded", "Arial Rounded MT Bold", var(--font);
+  font-size:1.16rem; line-height:1.05; font-weight:700;
+}
+.roadmap-node::before{ content:""; width:11px; height:11px; flex:0 0 auto; border-radius:50%; background:var(--node-color); box-shadow:0 0 0 4px color-mix(in srgb, var(--node-color) 16%, transparent); }
+.roadmap-node .vine-project{ color:var(--muted); font-size:.89rem; font-weight:700; }
+.roadmap-node .vine-project::before{ content:"·"; margin-right:7px; color:var(--node-color); font-weight:900; }
+.roadmap-node.n1{ left:0; top:46%; }
+.roadmap-node.n2{ left:38.5%; top:46%; }
+.roadmap-node.n3{ --node-color:var(--blue); left:25%; top:10%; }
+.roadmap-node.n5{ left:32%; top:72%; }
+.roadmap-node.n6{ right:12%; top:72%; }
+.roadmap-node.n7{ --node-color:var(--blue); left:61%; top:10%; }
+.roadmap-node.n8{ right:-2%; top:46%; }
+.roadmap-node.n1,
+.roadmap-node.n2,
+.roadmap-node.n5{ --node-color:var(--purple); }
+.roadmap-node.n6,
+.roadmap-node.n8{ --node-color:var(--green); }
+.roadmap-mobile{ display:none; position:relative; height:780px; }
+.roadmap-mobile .mobile-vine{ position:absolute; inset:0; width:100%; height:100%; }
+.roadmap-mobile .mobile-vine .roadmap-arrow{
+  fill:none; stroke:url(#mobileVineGradient); stroke-width:6.2; stroke-linecap:butt; stroke-linejoin:round;
+  opacity:.9; vector-effect:non-scaling-stroke;
+}
+.roadmap-mobile .mobile-vine .roadmap-arrow.is-dashed{
+  stroke:url(#mobileVineGradient); stroke-dasharray:6 8; opacity:.64;
+}
+.roadmap-mobile .mobile-vine .vine-highlight{ fill:none; stroke:rgba(235,245,214,.68); stroke-width:1.35; stroke-linecap:butt; opacity:.44; transform:translate(-.85px,-.75px); pointer-events:none; }
+.roadmap-mobile .mobile-vine .vine-highlight.is-dashed{ stroke-dasharray:6 8; opacity:.46; }
+.roadmap-mobile .mobile-vine .leaf-pair{ opacity:.96; }
+.roadmap-mobile .roadmap-node{ font-size:.96rem; padding:12px 15px 12px 13px; gap:9px; }
+.roadmap-mobile .roadmap-node::before{ width:9px; height:9px; box-shadow:0 0 0 3px color-mix(in srgb, var(--node-color) 16%, transparent); }
+.roadmap-mobile .roadmap-node .vine-project{ font-size:.76rem; }
+.roadmap-mobile .n1{ left:0; top:2%; }
+.roadmap-mobile .n3{ left:20%; top:16%; }
+.roadmap-mobile .n2{ left:24%; top:31%; }
+.roadmap-mobile .n5{ left:0; top:46%; }
+.roadmap-mobile .n6{ right:0; top:62%; }
+.roadmap-mobile .n7{ left:0; top:77%; }
+.roadmap-mobile .n8{ right:0; top:91%; }
+@media(max-width:880px){
+  .research-roadmap{ margin-bottom:58px; padding-top:0; }
+  .roadmap-canvas{ display:none; }
+  .roadmap-mobile{ display:block; }
+}
+@media(max-width:480px){
+  .research-roadmap{ margin-left:0; margin-right:0; }
+  .roadmap-mobile{ height:750px; }
 }
 </style>
 </head>
@@ -571,12 +640,8 @@ footer .foot-link{ color:var(--taupe); }
     <div class="brand"><span class="dot"></span> 李雪彤 <span class="en">/ Xuetong Li</span></div>
     <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><button class="active" data-target="home">首页</button></li>
-      <li><button data-target="education">教育</button></li>
-      <li><button data-target="research">科研</button></li>
-      <li><button data-target="experience">经历</button></li>
-      <li><button data-target="skills">技能</button></li>
-      <li><button data-target="honors">荣誉</button></li>
+      <li><button class="active" data-target="home">基础信息</button></li>
+      <li><button data-target="research">科研与实习经历</button></li>
     </ul>
   </div>
 </nav>
@@ -587,28 +652,17 @@ footer .foot-link{ color:var(--taupe); }
   <section class="section active" id="home">
     <div class="hero">
       <div class="hero-text">
-        <span class="hero-tag">复杂网络建模 · 异常检测</span>
+        <span class="hero-tag">图算法 · 异常检测 · AI安全 · 视频生成加速</span>
         <h1><span class="greet">Hi~我是</span><span class="name">李雪彤</span><span class="en">XUETONG&nbsp;LI</span></h1>
         <p class="hero-lead">
-          上海交通大学应用数学<b>直博生</b>，专注于<b>复杂网络建模与图异常检测</b>。
-          研究横跨图机器学习、多模态风控与大模型安全，并在工业风控场景中将算法落地为可交付的业务能力。
+          上海交通大学应用数学<b>博士在读</b>，围绕复杂数据中的风险发现与可靠决策开展研究：
+          以<b>图算法和异常检测</b>为基础，延伸至<b>多模态 AI 安全</b>，同时具备工业风控落地与视频生成训练、推理加速经验。
         </p>
         <div class="hero-meta">
           <a class="meta-chip" href="mailto:xuetongli@sjtu.edu.cn">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
             xuetongli@sjtu.edu.cn
           </a>
-        </div>
-      </div>
-      <div class="hero-portrait">
-        <div class="avatar-frame">
-          <div class="avatar" id="avatar">
-            <img src="avatar.jpg" alt="李雪彤" />
-            <div class="avatar-placeholder">
-              <span class="ph-name">李</span>
-              <span class="ph-sub">XUETONG LI</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -618,9 +672,89 @@ footer .foot-link{ color:var(--taupe); }
   <section class="section" id="experience">
     <div class="section-head">
       <span class="eyebrow">Experience</span>
-      <h2 class="section-title">实习经历与项目</h2>
+      <h2 class="section-title">实习经历</h2>
     </div>
     <div class="timeline">
+      <div class="tl-item">
+        <div class="card">
+          <div class="card-top">
+            <div>
+              <div class="card-title">华为</div>
+              <div class="card-org">多模态视频生成算法 实习</div>
+            </div>
+            <span class="card-date">2026.07 – 至今</span>
+          </div>
+          <ul class="point-list">
+            <li><b>昇腾适配：</b>基于 FastVideo 完成 DMD2 和 SLA 在昇腾 Ascend 芯片上的多种配置的训练、推理、vbench测试，解决dmd+高度稀疏带来的时序抖动问题。</li>
+            <li><b>生成加速：</b>深度调研以训助推的视频生成加速方法，包括但不限于根据注意力pattern分类精细化注意力mask、H3的多模态注意力稀疏、KV压缩等方法。</li>
+          </ul>
+          <div class="project-expand">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="huaweiInternDetail">
+              <span class="toggle-icon" aria-hidden="true"></span>
+              <span class="toggle-text">展开实习详情</span>
+            </button>
+            <div class="project-detail" id="huaweiInternDetail" hidden>
+              <div class="detail-tabs" role="tablist" aria-label="华为实习经历详情">
+                <button class="active" type="button" role="tab" aria-selected="true" data-detail-tab="huawei-adapt">昇腾适配与验证</button>
+                <button type="button" role="tab" aria-selected="false" data-detail-tab="huawei-accel">生成加速研究</button>
+              </div>
+
+              <div class="detail-panel active" role="tabpanel" data-detail-panel="huawei-adapt">
+                <h4>FastVideo 上 DMD2 与 SLA 的昇腾适配</h4>
+                <p class="detail-note">基于 FastVideo 完成 DMD2 与 SLA 在昇腾 Ascend 芯片上的多配置训练与推理适配，并通过 VBench 测试验证生成质量与时序稳定性。</p>
+                <div class="model-chain" aria-label="昇腾适配技术链路">
+                  <div class="chain-node">FastVideo · DMD2 / SLA</div>
+                  <div class="flow-arrow" aria-hidden="true">→</div>
+                  <div class="chain-node">Ascend 多配置</div>
+                  <div class="flow-arrow" aria-hidden="true">→</div>
+                  <div class="chain-node em">训练 / 推理 / VBench</div>
+                </div>
+                <div class="detail-grid">
+                  <div class="detail-block">
+                    <h5>适配目标</h5>
+                    <ul class="compact-list">
+                      <li>支持 DMD2 与 SLA 在昇腾 Ascend 芯片上的多种配置。</li>
+                      <li>覆盖训练、推理与 VBench 测试的完整验证链路。</li>
+                      <li>解决 DMD 与高度稀疏叠加引发的时序抖动，提升视频生成稳定性。</li>
+                    </ul>
+                  </div>
+                  <div class="detail-block">
+                    <h5>核心工作</h5>
+                    <ul class="compact-list">
+                      <li>基于 FastVideo 完成 DMD2 与 SLA 多种配置的迁移与适配。</li>
+                      <li>完成不同配置下的训练、推理与 VBench 质量评测。</li>
+                      <li>定位并修复 DMD 与高度稀疏组合导致的时序抖动问题。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-panel" role="tabpanel" data-detail-panel="huawei-accel">
+                <h4>以训助推的视频生成加速方法调研</h4>
+                <p class="detail-note">深度调研以训助推的视频生成加速方法，重点关注基于注意力 pattern 分类的精细化注意力 mask、H3 多模态注意力稀疏与 KV 压缩等方向。</p>
+                <div class="detail-grid">
+                  <div class="detail-block">
+                    <h5>方法方向</h5>
+                    <ul class="compact-list">
+                      <li>根据注意力 pattern 分类设计精细化注意力 mask。</li>
+                      <li>调研 H3 的多模态注意力稀疏机制。</li>
+                      <li>分析 KV 压缩等方法在视频生成链路中的适用性。</li>
+                    </ul>
+                  </div>
+                  <div class="detail-block">
+                    <h5>调研重点</h5>
+                    <ul class="compact-list">
+                      <li>梳理不同方法的训练机制、适用场景与推理收益。</li>
+                      <li>分析稀疏化与压缩对生成质量和时序一致性的潜在影响。</li>
+                      <li>对比实现复杂度、硬件适配性与可落地路径。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="tl-item">
         <div class="card">
           <div class="card-top">
@@ -644,6 +778,7 @@ footer .foot-link{ color:var(--taupe); }
               <div class="detail-tabs" role="tablist" aria-label="小红书实习经历详情">
                 <button class="active" type="button" role="tab" aria-selected="true" data-detail-tab="xhs-detect">发现与识别</button>
                 <button type="button" role="tab" aria-selected="false" data-detail-tab="xhs-action">处置与迭代</button>
+                <button type="button" role="tab" aria-selected="false" data-detail-tab="xhs-recap">异常账号检测研究</button>
               </div>
 
               <div class="detail-panel active" role="tabpanel" data-detail-panel="xhs-detect">
@@ -716,154 +851,32 @@ footer .foot-link{ color:var(--taupe); }
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="card">
-          <div class="card-top">
-            <div>
-              <div class="card-title">多模态内容风控审核智能体系统</div>
-              <div class="card-org">项目</div>
-            </div>
-            <span class="card-date">2026.03</span>
-          </div>
-          <ul class="point-list">
-            <li><b>架构设计：</b>面向评论图文审核场景，基于 LangGraph 构建多阶段审核状态机，将风险识别、规则检索、报告生成解耦为可独立测试的模块；系统根据分类结果动态选择后续路径，支持单样本审核与批量流水线处理。</li>
-            <li><b>能力实现：</b>基于标注多模态数据微调 VLM 风险分类模型，并构建风控规则 RAG 知识库，将识别结果与平台规则匹配，输出包含风险类别、命中依据、处置建议等的结构化审核报告，提升审核的一致性与可解释性。</li>
-          </ul>
-          <div class="project-expand">
-            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="riskAgentDetail">
-              <span class="toggle-icon" aria-hidden="true"></span>
-              <span class="toggle-text">展开项目详情</span>
-            </button>
-            <div class="project-detail" id="riskAgentDetail" hidden>
-              <div class="detail-tabs" role="tablist" aria-label="多模态内容风控审核智能体系统详情">
-                <button class="active" type="button" role="tab" aria-selected="true" data-detail-tab="overview">项目总览</button>
-                <button type="button" role="tab" aria-selected="false" data-detail-tab="sft">分类 SFT</button>
-                <button type="button" role="tab" aria-selected="false" data-detail-tab="finetune">微调效果</button>
-                <button type="button" role="tab" aria-selected="false" data-detail-tab="rag">RAG 规则库</button>
-              </div>
 
-              <div class="detail-panel active" role="tabpanel" data-detail-panel="overview">
-                <h4>多模态评论内容安全审核 Agent</h4>
-                <p class="detail-note">系统以 Agent 作为统一编排层，将评论风险识别、违规规则检索与审核报告生成串成可追溯的决策链。</p>
-                <div class="audit-flow" aria-label="审核流程">
-                  <div class="flow-node">
-                    <span>STEP 01</span>
-                    <b>违规内容初步分类</b>
-                    <small>对评论、标题、首图进行多模态判断，输出正常 / 灰色 / 违规，降低误判。</small>
-                  </div>
-                  <div class="flow-arrow" aria-hidden="true">→</div>
-                  <div class="flow-node">
-                    <span>STEP 02</span>
-                    <b>RAG 违规知识库检索</b>
-                    <small>召回平台规则、风险等级与处置标准，为模型判断提供规则约束。</small>
-                  </div>
-                  <div class="flow-arrow" aria-hidden="true">→</div>
-                  <div class="flow-node">
-                    <span>STEP 03</span>
-                    <b>结构化审核报告生成</b>
-                    <small>生成风险类别、命中依据、风险等级、判断理由与处置建议。</small>
-                  </div>
-                </div>
-                <div class="agent-label">Agent</div>
+              <div class="detail-panel" role="tabpanel" data-detail-panel="xhs-recap">
+                <h4>从账号异常检测应用，抽象为通用图异常检测研究</h4>
+                <p class="detail-note">小红书的大盘异常检测不仅要识别已有作弊类型，还需要在标签稀缺、作弊手法持续变化、账号交互分布不断漂移时发现未知风险。基于这一实际问题，进一步形成了 RECAP 研究工作。</p>
                 <div class="detail-grid">
                   <div class="detail-block">
-                    <h5>安全机制设计</h5>
+                    <h5>应用中的核心挑战</h5>
                     <ul class="compact-list">
-                      <li>多级分类（正常 / 灰色 / 违规）降低误判。</li>
-                      <li>RAG 规则增强，提升一致性与可控性。</li>
-                      <li>结构化输出，支持审计与合规记录。</li>
+                      <li>异常标签稀缺且成本高，难以为每类新型作弊行为持续构造监督样本。</li>
+                      <li>专项模型依赖固定特征与决策边界，面对新手法和分布变化时容易失效。</li>
+                      <li>业务不仅需要发现单个高风险账号，还要识别异常群体并估计不同作弊类型的整体水位。</li>
                     </ul>
                   </div>
                   <div class="detail-block">
-                    <h5>在风险控制的作用</h5>
+                    <h5>RECAP 带来的能力</h5>
                     <ul class="compact-list">
-                      <li>通过规则约束防止模型幻觉。</li>
-                      <li>增强不同样本、不同批次之间的审核一致性。</li>
-                      <li>保留可追溯决策链，便于复核与治理沉淀。</li>
+                      <li>将账号置于互动网络和局部社区中判断，关注其行为模式是否偏离相似账号群体。</li>
+                      <li>无需异常标签或针对目标场景重新训练，即可进行大盘风险排序与异常群体定位。</li>
+                      <li>通过可分解的异常信号辅助理解风险来源，为新型作弊发现和后续策略分析提供依据。</li>
                     </ul>
                   </div>
                 </div>
-              </div>
-
-              <div class="detail-panel" role="tabpanel" data-detail-panel="sft">
-                <h4>内容违规分类 SFT 数据与提示词</h4>
-                <div class="sft-layout">
-                  <div class="data-box">
-                    <b>人工制作“正常”“灰色”“违规”三类数据各 10 条</b>
-                    <div class="data-example">
-                      <span>("山缓缓吃过一次不错", "求推荐上海好吃的火锅店！", "data_multimodal/images/001.png", "L1", "正常的美食问答")</span>
-                      <span>("私信我获取独家折扣，限时优惠", "出88VIP网易云音乐会员", "data_multimodal/images/002.png", "L2", "疑似引流行为，需审核")</span>
-                    </div>
-                  </div>
-                  <div class="info-strip">
-                    <div><b>数据增强：</b>评论、标题、图片</div>
-                    <div><b>数据集构造：</b>训练 : 测试 = 4 : 1</div>
-                  </div>
-                </div>
-                <div class="prompt-box">
-                  <pre><span class="orange">instruction</span>：你是**平台的风控审核助手。请对以下用户发布的评论内容进行风险评估，同时判断评论与帖子标题、图片是否一致。
-
-【待审评论内容】招募兼职刷单员，日入500，不用押金
-【帖子标题】**
-【帖子首图路径】**
-【评估要求】
-1. 判断评论内容是否违规：正常 / 灰色（需人工审核）/ 违规
-2. 如违规或灰色，说明违规类型
-3. 给出风险等级：L1（低）/ L2（中低）/ L3（中高）/ L4（高）
-4. 给出判断理由
-【输出格式】严格按 JSON 输出
-{"label":"正常/灰色/违规","type":"违规类型或无","level":"L1/L2/L3/L4","reason":"判断理由"}</pre>
-                </div>
-              </div>
-
-              <div class="detail-panel" role="tabpanel" data-detail-panel="finetune">
-                <h4>Qwen2.5-VL-3B LoRA 微调与评估结果</h4>
-                <p class="detail-note">将结构化样本转换为对话格式后，用 Qwen2.5-VL-3B 做 LoRA 微调，并解析生成内容中的 label 计算三分类效果。</p>
-                <div class="model-chain" aria-label="微调链路">
-                  <div class="chain-node">数据格式化为对话</div>
-                  <div class="flow-arrow" aria-hidden="true">→</div>
-                  <div class="chain-node">Qwen2.5-VL-3B</div>
-                  <div class="flow-arrow" aria-hidden="true">↻</div>
-                  <div class="chain-node em">LoRA<br><small>3B → 0.2e</small></div>
-                </div>
-                <div class="metric-compare">
-                  <div class="score-card">
-                    <span>基础模型</span>
-                    <b>44%</b>
-                  </div>
-                  <div class="score-card highlight">
-                    <span>微调模型</span>
-                    <b>100%</b>
-                  </div>
-                </div>
-                <div class="json-output">{"label":"违规","type":"刷单欺诈","level":"L3","reason":"刷单欺诈行为"}</div>
-              </div>
-
-              <div class="detail-panel" role="tabpanel" data-detail-panel="rag">
-                <h4>RAG 规则查询与内容安全审核 Agent</h4>
-                <p class="detail-note">将平台风控规则沉淀为规则知识库，经向量数据库相似检索与 rerank 返回 top 3 规则，为审核报告提供依据。</p>
-                <div class="rule-table" aria-label="规则知识库">
-                  <div class="rule-row"><b>账号行为规范</b><span>注册限制、异常登录检测、封禁等级（警告 / 7-30天 / 永久）</span></div>
-                  <div class="rule-row"><b>内容发布规范</b><span>违禁内容一票否决、限制内容需审核、商业推广合规要求</span></div>
-                  <div class="rule-row"><b>互动行为规范</b><span>刷量行为（机器点赞 &gt;100次/小时触发封禁）、评论规范、私信限制（24h内 &gt;20条触发限制）</span></div>
-                  <div class="rule-row"><b>交易安全规范</b><span>电商风控（退款率 &gt;15% 重点监控）、支付风控（单笔 &gt;5000元二次验证）</span></div>
-                  <div class="rule-row"><b>风险等级定义</b><span>L1（警告）/ L2（限制1-7天）/ L3（封号7-30天）/ L4（永久封禁+设备拉黑）</span></div>
-                  <div class="rule-row"><b>黑产特征识别</b><span>设备指纹伪造、IP代理、验证码绕过、养号行为及检测指标</span></div>
-                </div>
-                <div class="rag-flow">
-                  <span class="rag-chip">规则知识库</span>
-                  <span class="rag-arrow" aria-hidden="true">→</span>
-                  <span class="rag-chip">向量数据库</span>
-                  <span class="rag-arrow" aria-hidden="true">↩</span>
-                  <span>相似检索 · 重排 top 3</span>
-                </div>
-                <div class="qa-box">
-                  <p><b>"q"：</b>"电商卖家退款率超过多少会被重点监控？"</p>
-                  <p class="answer"><b>"a"：</b>"电商卖家退款率超过15%的店铺进入重点监控。文档中未明确说明此情况对应的风险等级。"</p>
+                <div class="research-impact">
+                  <b>对账号异常检测的关键意义</b>
+                  <p>它把一次性的专项识别扩展为可持续的通用异常发现能力：既支撑大规模账号风险筛查，也帮助观察异常群体结构和作弊水位，为新风险研判、人工复核与治理策略制定提供线索。</p>
+                  <a class="research-link" href="projects/recap/index.html">查看 RECAP 项目介绍 ↗</a>
                 </div>
               </div>
             </div>
@@ -875,39 +888,175 @@ footer .foot-link{ color:var(--taupe); }
 
   <!-- ================= 科研 ================= -->
   <section class="section" id="research">
+    <div class="research-roadmap" aria-label="科研与实习经历之间的研究脉络">
+      <div class="roadmap-canvas">
+        <svg class="roadmap-lines" viewBox="0 0 1100 420" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="vineGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1100" y2="0">
+              <stop offset="0" stop-color="#c9ab62"></stop>
+              <stop offset=".34" stop-color="#91b379"></stop>
+              <stop offset=".72" stop-color="#6e9b77"></stop>
+              <stop offset="1" stop-color="#5d8674"></stop>
+            </linearGradient>
+            <linearGradient id="leafDeepDesktop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a7ca80"></stop>
+              <stop offset="1" stop-color="#6f9c63"></stop>
+            </linearGradient>
+            <linearGradient id="leafLightDesktop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d1e5a6"></stop>
+              <stop offset="1" stop-color="#91b975"></stop>
+            </linearGradient>
+            <g id="leafSproutDesktop">
+              <g transform="rotate(-24 7 0)">
+                <path d="M7 0 C11 -6 20 -6.5 26 0 C20 4.4 12 4.5 7 0Z" fill="url(#leafDeepDesktop)" stroke="#5f8155" stroke-width="1.05" stroke-linejoin="round"></path>
+                <path d="M8 0 C14 .25 20.3 -.15 25.1 0" fill="none" stroke="#dcebb5" stroke-width=".82" stroke-linecap="round" opacity=".86"></path>
+              </g>
+              <g transform="rotate(40 7 0)">
+                <path d="M7 0 C10 -4.2 16.5 -4.6 21.5 0 C17 3.6 11 3.5 7 0Z" fill="url(#leafLightDesktop)" stroke="#769763" stroke-width="1" stroke-linejoin="round"></path>
+                <path d="M8 0 C12.4 .18 16.9 -.12 20.7 0" fill="none" stroke="#e5f0c4" stroke-width=".76" stroke-linecap="round" opacity=".84"></path>
+              </g>
+            </g>
+          </defs>
+          <path class="roadmap-arrow is-dashed" d="M284 212 L428 212"></path>
+          <path class="roadmap-arrow" d="M220 193 Q262 108 370 88"></path>
+          <path class="roadmap-arrow" d="M500 88 C525 110 535 150 535 190"></path>
+          <path class="roadmap-arrow" d="M570 235 C570 265 535 286 500 301"></path>
+          <path class="roadmap-arrow" d="M596 323 C655 316 713 330 770 322 C792 319 813 320 832 323"></path>
+          <path class="roadmap-arrow right-vine" d="M850 84 C885 100 930 145 980 190"></path>
+          <path class="roadmap-arrow right-vine" d="M850 300 C885 288 930 260 980 239"></path>
+          <path class="vine-highlight is-dashed" d="M284 212 L428 212"></path>
+          <path class="vine-highlight" d="M220 193 Q262 108 370 88"></path>
+          <path class="vine-highlight" d="M500 88 C525 110 535 150 535 190"></path>
+          <path class="vine-highlight" d="M570 235 C570 265 535 286 500 301"></path>
+          <path class="vine-highlight" d="M596 323 C655 316 713 330 770 322 C792 319 813 320 832 323"></path>
+          <path class="vine-highlight" d="M850 84 C885 100 930 145 980 190"></path>
+          <path class="vine-highlight" d="M850 300 C885 288 930 260 980 239"></path>
+          <path class="vine-tendril" d="M239 192 C250 183 258 189 254 198 C251 204 244 203 246 197"></path>
+          <path class="vine-tendril" d="M568 241 C580 233 588 240 584 248 C581 254 574 252 577 246"></path>
+          <path class="vine-tendril" d="M630 320 C640 308 651 314 648 323 C646 329 639 328 642 322"></path>
+          <path class="vine-tendril right-vine" d="M878 116 C866 106 858 114 862 122 C865 128 873 125 870 119"></path>
+          <path class="vine-tendril right-vine" d="M940 263 C951 273 960 265 956 257 C953 251 946 254 949 260"></path>
+          <g aria-hidden="true">
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(354 212) rotate(180) scale(1.3)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(280 124) rotate(145) scale(1.45)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(527 132) rotate(252) scale(1.42)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(531 284) rotate(328) scale(1.4)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(678 324) rotate(180) scale(1.45)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(909 126) rotate(221) scale(1.4)"></use>
+            <use class="leaf-pair" href="#leafSproutDesktop" transform="translate(909 273) rotate(153) scale(1.38)"></use>
+          </g>
+        </svg>
+
+        <div class="roadmap-node n1"><span>图结构基础建模</span><span class="vine-project">AAS · CND</span></div>
+        <div class="roadmap-node n2"><span>通用图异常检测</span><span class="vine-project">RECAP</span></div>
+        <div class="roadmap-node n3"><span>社区风控与治理</span><span class="vine-project">小红书实习</span></div>
+        <div class="roadmap-node n5"><span>模型安全评测</span><span class="vine-project">EviSafe</span></div>
+        <div class="roadmap-node n6"><span>从安全诊断走向稳定修复</span></div>
+        <div class="roadmap-node n7"><span>视频生成训练与推理加速</span><span class="vine-project">华为实习</span></div>
+        <div class="roadmap-node n8"><span>安全 · 可靠 · 高效的视频生成</span><span class="vine-project">未来交汇</span></div>
+      </div>
+
+      <div class="roadmap-mobile" aria-hidden="true">
+        <svg class="mobile-vine" viewBox="0 0 360 680" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="mobileVineGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="680">
+              <stop offset="0" stop-color="#c9ab62"></stop>
+              <stop offset=".42" stop-color="#91b379"></stop>
+              <stop offset="1" stop-color="#5d8674"></stop>
+            </linearGradient>
+            <linearGradient id="leafDeepMobile" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a7ca80"></stop>
+              <stop offset="1" stop-color="#6f9c63"></stop>
+            </linearGradient>
+            <linearGradient id="leafLightMobile" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d1e5a6"></stop>
+              <stop offset="1" stop-color="#91b975"></stop>
+            </linearGradient>
+            <g id="leafSproutMobile">
+              <g transform="rotate(-24 7 0)">
+                <path d="M7 0 C11 -6 20 -6.5 26 0 C20 4.4 12 4.5 7 0Z" fill="url(#leafDeepMobile)" stroke="#5f8155" stroke-width="1.05" stroke-linejoin="round"></path>
+                <path d="M8 0 C14 .25 20.3 -.15 25.1 0" fill="none" stroke="#dcebb5" stroke-width=".82" stroke-linecap="round" opacity=".86"></path>
+              </g>
+              <g transform="rotate(40 7 0)">
+                <path d="M7 0 C10 -4.2 16.5 -4.6 21.5 0 C17 3.6 11 3.5 7 0Z" fill="url(#leafLightMobile)" stroke="#769763" stroke-width="1" stroke-linejoin="round"></path>
+                <path d="M8 0 C12.4 .18 16.9 -.12 20.7 0" fill="none" stroke="#e5f0c4" stroke-width=".76" stroke-linecap="round" opacity=".84"></path>
+              </g>
+            </g>
+          </defs>
+          <path class="roadmap-arrow" d="M72 55 Q108 82 145 106"></path>
+          <path class="roadmap-arrow is-dashed" d="M210 55 C315 80 320 165 270 207"></path>
+          <path class="roadmap-arrow" d="M145 151 L180 207"></path>
+          <path class="roadmap-arrow" d="M260 250 C260 280 225 296 192 310"></path>
+          <path class="roadmap-arrow" d="M180 353 C195 378 220 400 235 419"></path>
+          <path class="roadmap-arrow" d="M330 462 C350 530 335 585 270 616"></path>
+          <path class="roadmap-arrow" d="M75 564 Q155 585 230 616"></path>
+          <path class="vine-highlight" d="M72 55 Q108 82 145 106"></path>
+          <path class="vine-highlight is-dashed" d="M210 55 C315 80 320 165 270 207"></path>
+          <path class="vine-highlight" d="M145 151 L180 207"></path>
+          <path class="vine-highlight" d="M260 250 C260 280 225 296 192 310"></path>
+          <path class="vine-highlight" d="M180 353 C195 378 220 400 235 419"></path>
+          <path class="vine-highlight" d="M330 462 C350 530 335 585 270 616"></path>
+          <path class="vine-highlight" d="M75 564 Q155 585 230 616"></path>
+          <g aria-hidden="true">
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(108 81) rotate(215) scale(1.15)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(298 125) rotate(255) scale(1.2)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(163 179) rotate(238) scale(1.13)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(238 286) rotate(324) scale(1.18)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(208 389) rotate(229) scale(1.15)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(332 553) rotate(290) scale(1.2)"></use>
+            <use class="leaf-pair" href="#leafSproutMobile" transform="translate(154 588) rotate(200) scale(1.15)"></use>
+          </g>
+        </svg>
+        <div class="roadmap-node n1"><span>图结构基础建模</span><span class="vine-project">AAS · CND</span></div>
+        <div class="roadmap-node n3"><span>社区风控与治理</span><span class="vine-project">小红书实习</span></div>
+        <div class="roadmap-node n2"><span>通用图异常检测</span><span class="vine-project">RECAP</span></div>
+        <div class="roadmap-node n5"><span>模型安全评测</span><span class="vine-project">EviSafe</span></div>
+        <div class="roadmap-node n6"><span>从安全诊断走向稳定修复</span><span class="vine-project">后续研究</span></div>
+        <div class="roadmap-node n7"><span>视频生成训练与推理加速</span><span class="vine-project">华为实习</span></div>
+        <div class="roadmap-node n8"><span>安全 · 可靠 · 高效的视频生成</span></div>
+      </div>
+    </div>
     <div class="section-head">
       <span class="eyebrow">Research</span>
       <h2 class="section-title">代表性科研论文</h2>
     </div>
     <div class="pub-list">
-      <div class="pub">
-        <div class="pub-no">01</div>
-        <div class="pub-body">
-          <div class="pub-title">Multi-view clustering integrating anchor attribute and structural information</div>
-          <div class="pub-meta">Xuetong Li, Xiao-Dong Zhang. <span class="pub-venue venue-pub">Neurocomputing 630 (2025): 129689</span></div>
+      <a class="pub-link" href="projects/aas/index.html" aria-label="打开 AAS 项目介绍页">
+        <div class="pub">
+          <div class="pub-no">01</div>
+          <div class="pub-body">
+            <div class="pub-title">Multi-view clustering integrating anchor attribute and structural information</div>
+            <div class="pub-meta">Xuetong Li, Xiao-Dong Zhang. <span class="pub-venue venue-pub">Neurocomputing 630 (2025): 129689</span></div>
+          </div>
         </div>
-      </div>
-      <div class="pub">
-        <div class="pub-no">02</div>
-        <div class="pub-body">
-          <div class="pub-title">Dismantling strategies for cost networks based on multi-view deep learning</div>
-          <div class="pub-meta">Xuetong Li, Xiao-Dong Zhang. <span class="pub-venue venue-pub">Neurocomputing 670 (2026): 132576</span></div>
+      </a>
+      <a class="pub-link" href="projects/cnd/index.html" aria-label="打开 CND 项目介绍页">
+        <div class="pub">
+          <div class="pub-no">02</div>
+          <div class="pub-body">
+            <div class="pub-title">Dismantling strategies for cost networks based on multi-view deep learning</div>
+            <div class="pub-meta">Xuetong Li, Xiao-Dong Zhang. <span class="pub-venue venue-pub">Neurocomputing 670 (2026): 132576</span></div>
+          </div>
         </div>
-      </div>
-      <div class="pub">
-        <div class="pub-no">03</div>
-        <div class="pub-body">
-          <div class="pub-title">RECAP: Residual Community Adhesion Patterns for Generalist Graph Anomaly Detection</div>
-          <div class="pub-meta">Xuetong Li et al. <span class="pub-venue venue-review">在投 / Under Review</span></div>
+      </a>
+      <a class="pub-link" href="projects/recap/index.html" aria-label="打开 RECAP 项目介绍页">
+        <div class="pub">
+          <div class="pub-no">03</div>
+          <div class="pub-body">
+            <div class="pub-title">RECAP: Residual Community Adhesion Patterns for Generalist Graph Anomaly Detection</div>
+            <div class="pub-meta">Xuetong Li, Gaofeng Liu, Xiao-Dong Zhang. <span class="pub-venue venue-review">under review</span></div>
+          </div>
         </div>
-      </div>
-      <div class="pub">
-        <div class="pub-no">04</div>
-        <div class="pub-body">
-          <div class="pub-title">EviSafe: Evidence-Grounded Safety Evaluation for Vision-Language Models</div>
-          <div class="pub-meta">Xuetong Li et al. <span class="pub-venue venue-review">在投 / Under Review</span></div>
+      </a>
+      <a class="pub-link" href="projects/evisafe/index.html" aria-label="打开 EviSafe 项目介绍页">
+        <div class="pub">
+          <div class="pub-no">04</div>
+          <div class="pub-body">
+            <div class="pub-title">EviSafe: Evidence-Grounded Safety Evaluation for Vision-Language Models</div>
+            <div class="pub-meta">Xuetong Li, Gaofeng Liu. <span class="pub-venue venue-review">under review</span></div>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="pub">
         <div class="pub-no">05</div>
         <div class="pub-body">
@@ -1050,107 +1199,6 @@ footer .foot-link{ color:var(--taupe); }
     </div>
   </section>
 
-  <!-- ================= 技能 ================= -->
-  <section class="section" id="skills">
-    <div class="section-head">
-      <span class="eyebrow">Skills</span>
-      <h2 class="section-title">技能特长</h2>
-    </div>
-    <div class="skill-legend">
-      <div class="skill-legend-item"><span class="legend-pip core"></span>核心技能 — 论文发表 / 独立主导</div>
-      <div class="skill-legend-item"><span class="legend-pip basic"></span>掌握 — 实习 / 合作项目中使用</div>
-    </div>
-    <div class="bubble-grid">
-
-      <div class="bubble-card">
-        <div class="bubble-tab">图学习 · 网络科学</div>
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M6.8 7.5 10.5 16M17.2 7.5 13.5 16M7 6h10"/></svg></div>
-        <div class="skill-tags">
-          <span class="core">图异常检测</span>
-          <span class="core">多视图聚类</span>
-          <span class="core">网络瓦解</span>
-          <span>复杂网络建模</span>
-          <span>残差社区建模</span>
-          <span>ego-neighbor 残差</span>
-          <span>软社区分配</span>
-        </div>
-      </div>
-
-      <div class="bubble-card">
-        <div class="bubble-tab">机器学习</div>
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><polyline points="3 17 7 9 11 14 15 8 19 11"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
-        <div class="skill-tags">
-          <span class="core">LightGBM</span>
-          <span class="core">SHAP 归因</span>
-          <span class="core">无监督异常检测</span>
-          <span>监督 / 无监督学习</span>
-          <span>强化学习</span>
-          <span>离线强化学习</span>
-          <span>多视图深度学习</span>
-        </div>
-      </div>
-
-      <div class="bubble-card">
-        <div class="bubble-tab">大模型 · 多模态</div>
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM2 9h2M2 15h2M20 9h2M20 15h2M9 2v2M15 2v2M9 20v2M15 20v2"/></svg></div>
-        <div class="skill-tags">
-          <span class="core">VLM 微调 (Qwen2.5)</span>
-          <span class="core">RAG 知识库</span>
-          <span class="core">多模态安全评测</span>
-          <span>跨模态绑定分析</span>
-          <span>LLM 可解释输出</span>
-          <span>证据驱动评测框架</span>
-        </div>
-      </div>
-
-      <div class="bubble-card">
-        <div class="bubble-tab">Agent 工程 · 风控落地</div>
-        <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div class="skill-tags">
-          <span class="core">LangGraph 智能体</span>
-          <span class="core">多模态内容风控</span>
-          <span>多阶段审核状态机</span>
-          <span>批量流水线处理</span>
-          <span>黑灰产治理</span>
-          <span>作弊账号识别</span>
-          <span>风险分群</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= 荣誉 ================= -->
-  <section class="section" id="honors">
-    <div class="section-head">
-      <span class="eyebrow">Honors</span>
-      <h2 class="section-title">获奖情况</h2>
-    </div>
-    <div class="honor-panel">
-      <p class="panel-note">学术、竞赛与个人荣誉</p>
-      <div class="honor-grid">
-        <div class="honor-card">
-          <div class="bubble-tab">学术奖项</div>
-          <div class="honor-medal">🏅</div>
-          <h3>AI for Math 学术会议<br>最佳海报奖</h3>
-          <p>2025 · 上海交通大学</p>
-        </div>
-        <div class="honor-card">
-          <div class="bubble-tab">荣誉称号</div>
-          <div class="honor-medal">⭐</div>
-          <h3>创新创业先进个人</h3>
-          <p>山东大学</p>
-        </div>
-        <div class="honor-card">
-          <div class="bubble-tab">竞赛奖项</div>
-          <div class="honor-medal">🏆</div>
-          <h3>全国大学生数学建模竞赛<br>国家二等奖</h3>
-          <p>National Award</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>
@@ -1162,6 +1210,25 @@ footer .foot-link{ color:var(--taupe); }
 /* ============================================================
    交互 1：栏目切换（单页应用，显示 / 隐藏内容区块）
    ============================================================ */
+function mergePageSections(primaryId, secondaryId){
+  const primary=document.getElementById(primaryId);
+  const secondary=document.getElementById(secondaryId);
+  if(!primary || !secondary) return;
+  const continuation=document.createElement('div');
+  continuation.className='merged-continuation';
+  continuation.id=secondaryId;
+  while(secondary.firstChild) continuation.appendChild(secondary.firstChild);
+  primary.appendChild(continuation);
+  secondary.remove();
+}
+mergePageSections('home','education');
+mergePageSections('research','experience');
+const experienceTimeline=document.querySelector('#experience .timeline');
+if(experienceTimeline){
+  const internshipCards=experienceTimeline.querySelectorAll(':scope > .tl-item');
+  if(internshipCards.length>=2) experienceTimeline.insertBefore(internshipCards[1],internshipCards[0]);
+}
+
 const navButtons = document.querySelectorAll('.nav-links button');
 const sections   = document.querySelectorAll('.section');
 const navLinks   = document.getElementById('navLinks');
@@ -1177,6 +1244,13 @@ function switchSection(targetId){
 }
 navButtons.forEach(btn => btn.addEventListener('click', () => switchSection(btn.dataset.target)));
 document.querySelectorAll('[data-jump]').forEach(el => el.addEventListener('click', () => switchSection(el.dataset.jump)));
+const initialSection = window.location.hash.slice(1);
+const sectionAliases = {education:'home', experience:'research'};
+const initialTarget = sectionAliases[initialSection] || initialSection;
+if(initialTarget && document.getElementById(initialTarget)?.classList.contains('section')){
+  switchSection(initialTarget);
+  window.addEventListener('load', () => window.scrollTo({top:0, behavior:'auto'}), {once:true});
+}
 
 /* 交互 2：移动端汉堡菜单开合 */
 menuToggle.addEventListener('click', () => {
@@ -1187,11 +1261,11 @@ menuToggle.addEventListener('click', () => {
 /* 交互 3：切换栏目时内部元素逐项淡入 */
 function runReveal(targetId){
   const target = document.getElementById(targetId);
-  const items = target.querySelectorAll('.tl-item, .pub, .edu-card, .bubble-card, .honor-card, .focus-tags span, .hero-text, .hero-portrait');
+  const items = target.querySelectorAll('.tl-item, .pub, .edu-card, .focus-tags span, .hero-text, .hero-portrait');
   items.forEach((el, i) => {
     el.classList.remove('reveal');
     void el.offsetWidth;
-    el.style.animationDelay = (i * 0.06) + 's';
+    el.style.animationDelay = Math.min(i * 0.05, 0.55) + 's';
     el.classList.add('reveal');
   });
 }
@@ -1205,7 +1279,7 @@ document.querySelectorAll('.project-toggle').forEach(btn => {
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!isOpen));
     if(target) target.hidden = isOpen;
-    if(label) label.textContent = isOpen ? '展开项目详情' : '收起项目详情';
+    if(label) label.textContent = isOpen ? '展开实习详情' : '收起实习详情';
   });
 });
 
@@ -1235,6 +1309,7 @@ document.querySelectorAll('.detail-tabs').forEach(tabList => {
 (function loadAvatar(){
   const candidates = ['avatar.png', 'avatar.jpg', 'avatar.jpeg'];
   const avatarBox  = document.getElementById('avatar');
+  if(!avatarBox) return;
   if(avatarBox.querySelector('img')){
     avatarBox.classList.add('loaded');
     return;
@@ -1274,6 +1349,16 @@ if(matchBtn){
     matchBtn.textContent = '功能开发中…';
     setTimeout(() => { matchBtn.textContent = '岗位匹配测算'; }, 1400);
   });
+}
+const research=document.getElementById('research');
+if(research){
+  const researchHeads=[...research.querySelectorAll('.section-head')];
+  const projectHead=researchHeads.find(el=>el.textContent.includes('科研项目'));
+  if(projectHead){projectHead.nextElementSibling?.remove();projectHead.remove()}
+  const pubs=[...research.querySelectorAll('.pub')];
+  pubs[1]?.style.setProperty('border-left-color','var(--amber)');
+  pubs[4]?.closest('.pub-link')?.remove();
+  pubs[4]?.remove();
 }
 </script>
 
